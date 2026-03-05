@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./Navbar.css"; // Kết nối với file trang điểm
+import "./NavBar.css"; // Kết nối với file trang điểm
 import Logo from "../../assets/picture/Logo.png";
 
 const Navbar = () => {
