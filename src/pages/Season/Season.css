@@ -125,3 +125,53 @@
     transform: scale(1.18);
     font-weight: 600;
 }
+
+/* =========================================
+   HIỆU ỨNG ANIMATION CHO 3 THẺ SEASON
+========================================= */
+
+/* 1. Thêm transition để hiệu ứng mượt mà và cấu hình lớp (z-index) */
+.card {
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1; /* Nằm ở lớp bình thường */
+}
+
+/* 2. Khi trỏ chuột vào bất kỳ thẻ nào, thẻ đó phải nổi lên trên cùng để không bị che */
+.card:hover {
+    z-index: 10;
+}
+
+/* 3. THẺ 1 (Bên trái): Phóng to từ phải sang trái */
+.card-wrapper .card:nth-child(1) {
+    transform-origin: right center; /* Neo chặt mép bên phải */
+}
+.card-wrapper .card:nth-child(1):hover {
+    transform: scale(1.1); /* Phóng to 10% */
+}
+
+/* 4. THẺ 3 (Bên phải): Phóng to từ trái sang phải */
+.card-wrapper .card:nth-child(3) {
+    transform-origin: left center; /* Neo chặt mép bên trái */
+}
+.card-wrapper .card:nth-child(3):hover {
+    transform: scale(1.1);
+}
+
+/* 5. THẺ 2 (Ở giữa): Phóng to đều từ tâm */
+.card-wrapper .card:nth-child(2) {
+    transform-origin: center center;
+}
+.card-wrapper .card:nth-child(2):hover {
+    transform: scale(1.08); /* Phóng to nhẹ hơn một chút vì thẻ giữa vốn đã to */
+}
+
+/* 6. Hiệu ứng "Né ra ngoài": Dùng pseudo-class :has() của CSS */
+/* Khi thẻ giữa được hover -> Đẩy thẻ 1 sang trái 30px */
+.card-wrapper:has(.card:nth-child(2):hover) .card:nth-child(1) {
+    transform: translateX(-30px);
+}
+/* Khi thẻ giữa được hover -> Đẩy thẻ 3 sang phải 30px */
+.card-wrapper:has(.card:nth-child(2):hover) .card:nth-child(3) {
+    transform: translateX(30px);
+}
