@@ -1,7 +1,7 @@
 import React from "react";
 import "./WhyJoin.css";
 import global from "../../../assets/icon/global.svg";
-import ReasonCard from "./reasonCard";
+import ReasonCard from "./ReasonCard.jsx";
 
 const WhyJoin = () => {
     return (
