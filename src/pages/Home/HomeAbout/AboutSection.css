@@ -1,27 +1,19 @@
 .aboutSecContainer {
+    width: 100%;
+    height: 700px; /* Độ cao 700px giống thiết kế Figma của bạn */
+    position: relative;
+    overflow: hidden; /* Cực kỳ quan trọng: Giấu đi những ảnh đang nằm chờ ở 2 bên mép */
+    background-color: #0f172a; /* Nền dự phòng lúc đang tải ảnh */
     display: flex;
-    justify-content: space-between;
-    padding: 0 120px;
-}
-
-.aboutSecContent {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 35px;
+    align-items: center;
 }
 
-.aboutSecContent a {
-    width:fit-content;
-    color: black;
-    background-color: white;
-    padding: 10px 60px;
-    border-radius: 12px;
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh luôn phóng to lấp đầy 100% khung hình mà không bị méo tỷ lệ */
 }
-
-.aboutSecContainer img {
-    width: 650px;
-    height: 500px;
-}
-

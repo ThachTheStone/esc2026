@@ -5,18 +5,13 @@ import Number from "./HomeNumber/Number.jsx";
 import Register from "./HomeRegister/Register.jsx";
 function Home() {
   return (
-      <div style={{display: 'flex',flexDirection: 'column', gap: '50px'}}>
-        <Hero />
-        <hr />
-        <AboutSection />
-        <hr />
-        <WhyJoin />
-        <hr />
-        <Number />
-        <hr />
-        <Register />
-        <hr />
-      </div>
+      <div style={{display: 'flex', flexDirection: 'column', gap: '0px'}}>
+            <Hero />
+            <WhyJoin />
+            <AboutSection />
+            <Number />
+            <Register />
+        </div>
     
   );
 }

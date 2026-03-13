@@ -1,30 +1,91 @@
 .numberContainer {
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff; /* Nền trắng như yêu cầu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 120px;
-    text-align: center;
+    box-sizing: border-box;
+    gap: 50px; /* Khoảng cách giữa cột trái và cột phải */
+}
+
+/* --- CỘT TRÁI --- */
+.numberLeft {
+    flex: 1; /* Chiếm 1 nửa không gian */
+    max-width: 500px;
+}
+
+.numberLeft h1 {
+    font-size: 3rem; /* Cỡ chữ tiêu đề theo yêu cầu */
+    font-weight: 700;
+    color: #0f172a; /* Màu đen/xanh navy cực đậm */
+    margin: 0 0 16px 0;
+}
+
+.highlight-blue {
+    color: #1d4ed8; /* Màu xanh dương cho chữ Highlights */
+}
+
+.numberLeft p {
+    font-size: 20px; /* Bằng với kích thước chữ của phần The Value of ESC */
+    color: #374151; /* Màu xám đậm để dễ đọc trên nền trắng */
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- CỘT PHẢI --- */
+.numberRight {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Chia làm 2 cột */
+    gap: 40px; /* Khoảng cách giữa các khối (hug) */
+    justify-content: end; /* Đẩy sát về bên phải */
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Khoảng cách giữa icon và chữ */
+    min-width: 163px; /* Chiều rộng tối thiểu theo cấu trúc hug */
+    height: 64px; /* Chiều cao cố định theo yêu cầu */
+}
+
+/* Khu vực dành riêng cho Icon */
+.statIcon {
+    width: 40px; /* Cố định kích thước khung chứa icon */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d4ed8; /* Nếu dùng SVG icon, nó sẽ lấy màu xanh này */
+}
+
+/* Nếu bạn dùng thẻ <img> cho icon, đoạn này giúp icon nằm gọn gàng */
+.statIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Khu vực chữ của các con số */
+.statText {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    justify-content: center;
 }
 
-.numberItems {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.statText h2 {
+    font-size: 28px; /* Con số to hơn nội dung */
+    font-weight: 700;
+    color: #1d4ed8; /* Con số màu xanh dương */
+    margin: 0 0 4px 0;
+    line-height: 1;
 }
 
-.numberContainer h2 {
-    font-size: 128px;
-}
-
-.numberItem {
-    font-size: 48px;
-    padding: 10px;
-}
-
-
-
-.numberItem-full {
-    grid-column: span 3;
-    font-size: 48px;
-    padding: 25px;
+.statText p {
+    font-size: 16px; /* Kích thước chữ bằng với phần The Value of ESC */
+    color: #111827;
+    margin: 0;
+    line-height: 1;
 }

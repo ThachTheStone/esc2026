@@ -10,10 +10,13 @@ const CurrentSeason = () => {
             <header className="hero-section">
                 <div className="hero-content">
                     <h1 className="hero-title">ESC - 2026</h1>
-                    <p className="hero-subtitle">Theme: Break the Norm</p>
+                    <p className="hero-subtitle">Theme: Find Your Flow</p>
                     <div className="hero-buttons">
                         <button className="btn-status">In progress</button>
-                        <button className="btn-register-top">Register now &rarr;</button>
+                        <a href="https://forms.gle/29UFPSqUqQGGKg7Q8" className="btn-register-top" >
+                            Register now <span>→</span>
+                        </a>
+                        
                     </div>
                 </div>
             </header>

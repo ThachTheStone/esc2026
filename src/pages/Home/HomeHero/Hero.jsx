@@ -1,22 +1,44 @@
 import React from "react";
 import "./Hero.css";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const Hero = () => {
     return (
         <div className="heroContainer">
-            <motion.h1
-        initial={{ scale: 0.5, opacity: 0 }} // Bắt đầu: Nhỏ bằng 1 nửa (0.5) và mờ tịt (0)
-        animate={{ scale: 1, opacity: 1 }}   // Kết thúc: Kích thước thật (1) và rõ nét (1)
-        transition={{ duration: 0.8, ease: "easeOut" }} // Thời gian: 0.8 giây, chuyển động mượt
-        >
-        English Speaking Competition
-        </motion.h1>
-            <p>Description</p>
-            <div className="heroContainer-buttons">
-                <Link to="/season">View current season</Link>
-                <Link to="/season">Explore last season</Link>
-            </div>
+          
+            <motion.div
+                className="heroContent"
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
+                <h1>
+                    English Speaking <br />
+                    <span className="text-blue">Competition</span>
+                </h1>
+                
+                <p>A public speaking competition for college and university students</p>
+                
+                <div className="heroContainer-buttons">
+                    
+                    <a href="https://forms.gle/29UFPSqUqQGGKg7Q8" className="register-btn" target="_blank" rel="noopener noreferrer">
+                        Register now <span>→</span>
+                    </a>
+                </div>
+            </motion.div>
+
+            
+            <motion.div
+                className="animated-box"
+        
+                initial={{ x: 668 }} 
+                animate={{ x: 0 }}  
+               
+                transition={{ 
+                    duration: 1, 
+                    ease: [0.22, 1.25, 0.36, 1], // Đây là ma thuật cubic-bezier
+                }}
+            />
         </div>
     );
 };

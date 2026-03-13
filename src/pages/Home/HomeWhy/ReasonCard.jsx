@@ -1,23 +1,13 @@
 import React from "react";
-import "./ReasonCard.css"
+import "./ReasonCard.css";
 
-const ReasonCard = ({ icon, title, content }) => {
+const ReasonCard = ({ title, content }) => {
     return (
         <div className="reasonCard">
-            <div className="cardIcon">
-                <img src={icon} alt="icon" />
-            </div>
-
-            <div className="cardTitle">
-                <h3>{title}</h3>
-            </div>
-
-            <div className="cardContent">
-                <p>{content}</p>
-            </div>
+            <h3>{title}</h3>
+            <p>{content}</p>
         </div>
     );
-}
+};
 
-export default ReasonCard
-
+export default ReasonCard;
