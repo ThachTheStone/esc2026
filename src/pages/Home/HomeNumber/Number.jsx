@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform, animate, useInView } from "framer
 import microIcon from "../../../assets/icon/microphone-svgrepo-com.svg";
 import universityIcon from "../../../assets/icon/university-svgrepo-com.svg";
 import peopleIcon from "../../../assets/icon/people-svgrepo-com.svg";
-import prizeIcon from "../../../assets/icon/achivement-mission-sport-svgrepo-com.svg";
+import prizeIcon from "../../../assets/icon/medal-ribbon-star-svgrepo-com.svg";
 
 // --- COMPONENT XỬ LÝ ĐẾM SỐ (TÍCH HỢP FRAMER MOTION) ---
 const Counter = ({ to, suffix }) => {
@@ -22,7 +22,6 @@ const Counter = ({ to, suffix }) => {
     return <motion.span ref={ref}>{rounded}</motion.span>;
 };
 
-// --- COMPONENT CHÍNH ---
 const Number = () => {
     return (
         <div className="numberContainer">
@@ -34,9 +33,8 @@ const Number = () => {
                 <p>A snapshot of ESC's growth, impact, and nationwide reach over the years.</p>
             </div>
 
-            {/* Cột phải: 4 thông số hiển thị Animation */}
             <div className="numberRight">
-                {/* Khối 1 */}
+                {/* Block 1 */}
                 <div className="statItem">
                     <div className="statIcon">
                         <img src={microIcon} alt=""/>
@@ -47,7 +45,7 @@ const Number = () => {
                     </div>
                 </div>
 
-                {/* Khối 2 */}
+                {/* Block 2 */}
                 <div className="statItem">
                     <div className="statIcon">
                         <img src={universityIcon} alt=""/>

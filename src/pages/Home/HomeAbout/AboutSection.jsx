@@ -1,64 +1,91 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./AboutSection.css";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
-// --- CHỖ ĐỂ BẠN CHÈN ẢNH VÀO ĐÂY ---
-// Bạn hãy đổi đường dẫn "../../../assets/picture/..." thành 3 bức ảnh thật của bạn nhé
-import Pic1 from "../../../assets/picture/aboutPic.jpg"; 
-import Pic2 from "../../../assets/picture/aboutPic.jpg"; 
-import Pic3 from "../../../assets/picture/aboutPic.jpg"; 
+import Pic1 from "../../../assets/picture/aboutPic.jpg";
+import Pic2 from "../../../assets/picture/SampleAbout.jpg"; 
+import Pic3 from "../../../assets/picture/SampleAbout2.jpg"; 
 
 const images = [Pic1, Pic2, Pic3];
 
 const AboutSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const containerRef = useRef(null);
-    
-    // Kiểm tra xem thẻ này đã xuất hiện trên màn hình của người dùng chưa
     const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
+    // Hàm chuyển ảnh
+    const paginate = (newDirection) => {
+        let nextIndex = currentIndex + newDirection;
+        // Xử lý vòng lặp: Hết ảnh 3 thì cuộn ngược về ảnh 1
+        if (nextIndex >= images.length) nextIndex = 0;
+        if (nextIndex < 0) nextIndex = images.length - 1;
+        
+        setCurrentIndex(nextIndex);
+    };
+
+    // Khi người dùng bấm trực tiếp vào gạch ngang
+    const jumpToImage = (index) => {
+        setCurrentIndex(index);
+    };
+
+    // Autoplay: Tự động trượt sau 4s
     useEffect(() => {
-        // Chỉ bắt đầu đếm giờ nếu người dùng đã lướt tới khu vực này
         if (isInView) {
             const timer = setInterval(() => {
-                setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }, 4000); // 4000ms = 4 giây
-            
-            // Dọn dẹp bộ đếm khi component bị đóng
+                paginate(1);
+            }, 4000);
             return () => clearInterval(timer);
         }
-    }, [isInView]);
+    }, [isInView, currentIndex]); // Reset bộ đếm mỗi khi currentIndex thay đổi (người dùng vừa tương tác)
 
-    // Cấu hình hiệu ứng trượt
-    const slideVariants = {
-        enter: { x: "100%" }, // Ảnh mới: Đứng chờ sẵn ở sát mép phải
-        center: { 
-            x: 0, 
-            transition: { duration: 0.8, ease: "easeInOut" } // Thời gian trượt là 0.8s
-        },
-        exit: { 
-            x: "-100%", // Ảnh cũ: Trượt bay sang sát mép trái
-            transition: { duration: 0.8, ease: "easeInOut" }
+    // Xử lý khi kéo thả xong
+    const handleDragEnd = (e, { offset }) => {
+        const swipeThreshold = 50; // Vuốt quá 50px mới chuyển trang
+        if (offset.x < -swipeThreshold) {
+            paginate(1); // Vuốt sang trái -> Xem ảnh tiếp theo
+        } else if (offset.x > swipeThreshold) {
+            paginate(-1); // Vuốt sang phải -> Xem ảnh trước đó
         }
     };
 
     return (
         <div className="aboutSecContainer" ref={containerRef}>
-            {/* AnimatePresence giúp theo dõi và tạo hiệu ứng cho thẻ bị xóa đi khỏi màn hình */}
-            <AnimatePresence>
-                <motion.img
-                    key={currentIndex} // Phải có key để React biết đây là các ảnh khác nhau
-                    src={images[currentIndex]}
-                    alt={`ESC Event Slide ${currentIndex + 1}`}
-                    className="slider-image"
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                />
-            </AnimatePresence>
+            {/* THAY ĐỔI LỚN NHẤT: Dùng một thanh cuộn (track) chứa tất cả ảnh */}
+            <motion.div
+                className="slider-track"
+                drag="x"
+                
+                
+                onDragEnd={handleDragEnd}
+                // Khúc này sẽ dịch chuyển cả dải băng chứa ảnh dựa trên index
+                animate={{ x: `-${currentIndex * 100}%` }} 
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+                {images.map((img, index) => (
+                    // Khối wrapper này giúp tạo đường kẻ trắng giữa các ảnh
+                    <div className="slide-wrapper" key={index}>
+                        <img
+                            src={img}
+                            alt={`ESC Event Slide ${index + 1}`}
+                            className="slider-image"
+                            draggable={false} // Chặn trình duyệt kéo ảnh (gây xung đột với framer-motion)
+                        />
+                    </div>
+                ))}
+            </motion.div>
+
+            {/* Thanh điều hướng ngang */}
+            <div className="slider-indicators">
+                {images.map((_, index) => (
+                    <div 
+                        key={index} 
+                        className={`indicator-dash ${index === currentIndex ? "active" : ""}`}
+                        onClick={() => jumpToImage(index)}
+                    />
+                ))}
+            </div>
         </div>
     );
-}
+};
 
 export default AboutSection;

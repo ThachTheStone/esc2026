@@ -22,10 +22,11 @@
 
 .heroContent h1 {
     font-size: 64px; /* Kích thước chữ to, nổi bật */
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.1;
     margin: 0;
     color: #ffffff;
+    font-family: 'UniNeueLight', sans-serif;
 }
 
 /* Tô màu xanh dương cho chữ Competition */
@@ -37,6 +38,7 @@
     font-size: 20px;
     color: #e2e8f0; /* Màu chữ trắng hơi xám để dễ đọc */
     margin: 10px 0 20px 0;
+    font-family: 'UniNeueLight', sans-serif;
 }
 
 .heroContainer-buttons {

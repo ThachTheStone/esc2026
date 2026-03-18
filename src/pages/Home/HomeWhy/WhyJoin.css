@@ -17,6 +17,7 @@
     margin-top: 0;
     margin-bottom: 50px; /* Khoảng cách từ tiêu đề xuống các thẻ card */
     text-align: center;
+    font-family: 'UniNeueLight', sans-serif;
 }
 
 .whyCards {

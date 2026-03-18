@@ -1,24 +1,30 @@
-/* Navbar.css */
 
 .navBar {
     display: flex;
     justify-content: space-between; /* Đẩy Logo sang trái, Menu sang phải */
     align-items: center;            /* Căn giữa tất cả theo chiều dọc */
-    padding: 10px 120px;             /* Tạo khoảng cách lề hai bên */
-    background-color: #000000;      /* Nền đen */
+    padding: 10px 90px;             /* Tạo khoảng cách lề hai bên */
+    background-color: rgb(5, 25, 34);      /* Nền đen */
     top: 0;
     position: sticky;
     z-index: 1000;
 }
 
 .navBar-Logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
     cursor: pointer;
+    display: flex;
+    align-items:center; 
 }
 
-/* Quan trọng: Sửa phần danh sách Menu */
+.navBar-Logo img{
+    height: 40px;
+    width: 60px;
+    object-fit: contain;
+}
+
+
+
+
 .navBar-Links {
     display: flex;                  /* Dàn hàng ngang các mục <li> */
     list-style: none;               /* Bỏ dấu chấm đầu dòng */
