@@ -1,6 +1,6 @@
 .aboutSecContainer {
     width: 100%;
-    height: 700px; 
+    height: 900px; 
     position: relative;
     overflow: hidden; 
     background-color: #0f172a; 
@@ -8,7 +8,7 @@
 
 /* Biến track thành một dải băng nằm ngang */
 .slider-track {
-    display: flex;
+    position: relative; /* Đổi thành relative để làm gốc tọa độ */
     width: 100%;
     height: 100%;
     cursor: grab; 
@@ -20,10 +20,12 @@
 
 /* Thiết lập cho từng bức ảnh */
 .slide-wrapper {
-    flex: 0 0 100%; /* Ép mỗi ảnh chiếm đúng 100% độ rộng của màn hình */
+    position: absolute; /* Phân thân các ảnh ra dựa trên tọa độ left % */
+    top: 0;
+    width: 100%;
     height: 100%;
     box-sizing: border-box;
-    border-right: 2px solid #ffffff; /* ĐƯỜNG KẺ TRẮNG PHÂN CÁCH NẰM Ở ĐÂY */
+    border-right: 1px solid #ffffff; /* Vẫn giữ lại đường kẻ trắng ngăn cách tuyệt đẹp */
 }
 
 /* Xóa đường kẻ trắng ở bức ảnh cuối cùng cho đẹp */
