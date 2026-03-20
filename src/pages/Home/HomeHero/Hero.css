@@ -10,6 +10,26 @@
     overflow: hidden; 
 }
 
+.heroOvalLayer {
+    position: absolute;
+    width: 1440px;
+    height: 441px;
+    
+    
+    background-color: rgba(37, 99, 235, 0.3); 
+    
+    border-radius: 50%;
+    filter: blur(100px); 
+    
+    /* Đặt vị trí Oval lệch sang trái và căn giữa theo chiều dọc để lót dưới chữ */
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    
+    z-index: 0; /* QUAN TRỌNG: Ép layer này chìm xuống dưới cùng */
+    pointer-events: none; /* Xuyên qua layer này để người dùng vẫn click được nút Register */
+}
+
 .heroContent {
     display: flex;
     flex-direction: column;
