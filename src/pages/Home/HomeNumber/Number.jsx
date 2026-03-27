@@ -9,14 +9,12 @@ import prizeIcon from "../../../assets/icon/medal-ribbon-star-svgrepo-com.svg";
 // --- COMPONENT XỬ LÝ ĐẾM SỐ (TÍCH HỢP FRAMER MOTION) ---
 const Counter = ({ to, suffix }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.5 }); // Bắt đầu chạy khi khu vực hiện 50%
+    const isInView = useInView(ref, { once: true, amount: 0.5 }); 
     const count = useMotionValue(0);
     const rounded = useTransform(count, (latest) => Math.round(latest) + suffix);
 
     useEffect(() => {
-        if (isInView) {
-            animate(count, to, { duration: 1.5, ease: "easeOut" }); // Chạy trong 1.5s
-        }
+        if (isInView) animate(count, to, { duration: 1.5, ease: "easeOut" }); 
     }, [isInView, count, to]);
 
     return <motion.span ref={ref}>{rounded}</motion.span>;
@@ -24,57 +22,55 @@ const Counter = ({ to, suffix }) => {
 
 const Number = () => {
     return (
-        <div className="numberContainer">
-            {/* Cột trái: Tiêu đề và nội dung */}
-            <div className="numberLeft">
-                <h1>
-                    Competition <span className="highlight-blue">Highlights</span>
-                </h1>
-                <p>A snapshot of ESC's growth, impact, and nationwide reach over the years.</p>
-            </div>
+        <div className="numberSectionWrapper">
+            {/* DẢI BLUR DƯỚI BỨC ẢNH: Trượt từ trên (bức ảnh) xuống từ từ */}
+            <motion.div 
+                className="numberBlurLayer"
+                initial={{ opacity: 0, y: -150 }} 
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+            ></motion.div>
 
-            <div className="numberRight">
-                {/* Block 1 */}
-                <div className="statItem">
-                    <div className="statIcon">
-                        <img src={microIcon} alt=""/>
-                    </div>
-                    <div className="statText">
-                        <h2><Counter to={3} suffix="+" /></h2>
-                        <p>seasons</p>
-                    </div>
+            <div className="numberContainer glass-panel">
+                <div className="numberLeft">
+                    <h1>
+                        Competition <span className="highlight-light-blue">Highlights</span>
+                    </h1>
+                    <p>A snapshot of ESC's growth, impact, and nationwide reach over the years.</p>
                 </div>
 
-                {/* Block 2 */}
-                <div className="statItem">
-                    <div className="statIcon">
-                        <img src={universityIcon} alt=""/>
+                <div className="numberRight">
+                    <div className="statItem">
+                        <div className="statIcon"><img src={microIcon} alt=""/></div>
+                        <div className="statText">
+                            <h2><Counter to={3} suffix="+" /></h2>
+                            <p>seasons</p>
+                        </div>
                     </div>
-                    <div className="statText">
-                        <h2><Counter to={20} suffix="+" /></h2>
-                        <p>universities and colleges</p>
-                    </div>
-                </div>
 
-                {/* Khối 3 */}
-                <div className="statItem">
-                    <div className="statIcon">
-                        <img src={peopleIcon} alt=""/>
+                    <div className="statItem">
+                        <div className="statIcon"><img src={universityIcon} alt=""/></div>
+                        <div className="statText">
+                            <h2><Counter to={20} suffix="+" /></h2>
+                            <p>universities and colleges</p>
+                        </div>
                     </div>
-                    <div className="statText">
-                        <h2><Counter to={200} suffix="+" /></h2>
-                        <p>candidates</p>
-                    </div>
-                </div>
 
-                {/* Khối 4 */}
-                <div className="statItem">
-                    <div className="statIcon">
-                        <img src={prizeIcon} alt=""/>
+                    <div className="statItem">
+                        <div className="statIcon"><img src={peopleIcon} alt=""/></div>
+                        <div className="statText">
+                            <h2><Counter to={200} suffix="+" /></h2>
+                            <p>candidates</p>
+                        </div>
                     </div>
-                    <div className="statText">
-                        <h2><Counter to={70} suffix="+ million VND" /></h2>
-                        <p>total prize value</p>
+
+                    <div className="statItem">
+                        <div className="statIcon"><img src={prizeIcon} alt=""/></div>
+                        <div className="statText">
+                            <h2><Counter to={70} suffix="+ million VND" /></h2>
+                            <p>total prize value</p>
+                        </div>
                     </div>
                 </div>
             </div>

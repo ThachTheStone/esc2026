@@ -1,50 +1,75 @@
-.numberContainer {
+/* Lớp vỏ ngoài cùng chứa cả thẻ kính và ánh sáng blur */
+.numberSectionWrapper {
     width: 100%;
-    height: 300px;
-    background-color: #ffffff;
+    height: 500px;
+    position: relative;
+    padding: 80px 120px;
+    background-color: #030c17; /* Nền navy tối */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Hiệu ứng Blur trượt từ ảnh xuống */
+.numberBlurLayer {
+    position: absolute;
+    width: 2000px;
+    height: 400px;
+    background-color: rgba(4, 59, 197); 
+    border-radius: 50%;
+    filter: blur(120px);
+    top: -60px; /* Nằm sát mép trên tiếp giáp với AboutSection */
+    left: 0%;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Thẻ kính trong suốt bọc toàn bộ nội dung */
+.numberContainer.glass-panel {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 120px;
-    box-sizing: border-box;
+    padding: 60px 80px;
     gap: 50px;
+    
+    /* Hiệu ứng Glassmorphism */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 32px; /* Bo góc cực tròn */
+    z-index: 1; /* Nổi lên trên dải blur */
 }
 
+.numberLeft { flex: 1; max-width: 500px; }
 
-.numberLeft {
-    flex: 1;
-    max-width: 500px;
-}
-
+/* Đổi màu chữ sang trắng/xám vì nền giờ đã tối */
 .numberLeft h1 {
     font-size: 3rem; 
     font-weight: 700;
-    color: #0f172a; 
+    color: #ffffff; 
     margin: 0 0 16px 0;
-    font-weight: bolder;
-    font-family: 'UniNeueLight', sans-serif;
 }
 
-.highlight-blue {
-    color: #1d4ed8; 
-}
+.highlight-light-blue { color: #60a5fa; } /* Xanh dương nhạt cho dễ đọc */
 
 .numberLeft p {
-    font-size: 20px; 
-    color: #374151; 
+    font-size: 16px; 
+    color: #cbd5e1; 
     line-height: 1.5;
     margin: 0;
-    font-weight: bold;
-    font-family: 'UniNeueLight', sans-serif;
 }
-
 
 .numberRight {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(2, auto); 
-    gap: 40px;
-    justify-content: end;
+    gap: 40px; 
+    justify-content: end; 
 }
 
 .statItem {
@@ -55,42 +80,30 @@
     height: 64px; 
 }
 
-
 .statIcon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    filter: invert(24%) sepia(94%) saturate(2227%) hue-rotate(212deg) brightness(92%) contrast(94%);
+    width: 40px; height: 40px;
+    display: flex; justify-content: center; align-items: center;
 }
 
+/* Dùng lại CSS Filter để biến icon thành màu trắng (nếu icon đang là màu đen) */
 .statIcon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 100%; height: 100%; object-fit: contain;
+    filter: brightness(0) invert(1); /* Biến icon thành màu trắng hoàn toàn */
 }
-
 
 .statText {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'UniNeueLight', sans-serif;
+    display: flex; flex-direction: column; justify-content: center;
 }
 
 .statText h2 {
     font-size: 28px; 
     font-weight: 700;
-    color: #1d4ed8; 
-    margin: 0 0 4px 0;
-    line-height: 1;
+    color: #ffffff; /* Con số màu trắng */
+    margin: 0 0 4px 0; line-height: 1;
 }
 
 .statText p {
-    font-weight: bold;
     font-size: 16px; 
-    color: #111827;
-    margin: 0;
-    line-height: 1;
+    color: #cbd5e1; /* Nội dung màu xám nhạt */
+    margin: 0; line-height: 1;
 }

@@ -5,11 +5,15 @@ import { motion } from "framer-motion";
 const Hero = () => {
     return (
         <div className="heroContainer">
-            
-            {/* LAYER 0: Nằm dưới cùng - Quầng sáng Oval mờ ảo */}
-            <div className="heroOvalLayer"></div>
+            {/* DẢI BLUR NẰM DƯỚI NAVBAR: Hiệu ứng từ ngoài gom vào */}
+            <motion.div 
+                className="heroOvalLayer"
+                initial={{ opacity: 0, scale: 1.5, y: -50 }} 
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+            ></motion.div>
           
-            {/* LAYER 2: Nằm trên cùng - Nội dung chữ */}
+            {/* Lớp Nội dung */}
             <motion.div
                 className="heroContent"
                 initial={{ x: -50, opacity: 0 }}
@@ -17,7 +21,10 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >   
                 <h1>
-                    English Speaking <br />
+                    <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+                    </style>
+                    English Speaking <br className="h1-mong" />
                     <span className="text-blue">Competition</span>
                 </h1>
                 
@@ -29,17 +36,6 @@ const Hero = () => {
                     </a>
                 </div>
             </motion.div>
-
-            {/* LAYER 1: Nằm giữa - Khối màu trắng/xanh nhạt */}
-            <motion.div
-                className="animated-box"
-                initial={{ x: 668 }} 
-                animate={{ x: 0 }}  
-                transition={{ 
-                    duration: 1, 
-                    ease: [0.22, 1.25, 0.36, 1],
-                }}
-            />
         </div>
     );
 };

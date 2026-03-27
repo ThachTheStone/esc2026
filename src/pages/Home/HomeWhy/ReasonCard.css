@@ -1,38 +1,40 @@
 .reasonCard {
     width: 320px;
     height: 242px;
-    background-color: #1d4ed8; /* Màu xanh dương giống trong thiết kế */
-    border-radius: 8px; /* Bo góc nhẹ cho mềm mại */
+    /* Hiệu ứng Glassmorphism (Kính mờ) */
+    background: rgba(255, 255, 255, 0.05); /* Trắng siêu nhạt */
+    backdrop-filter: blur(16px); /* Làm mờ cảnh vật phía sau kính */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Viền kính sáng nhẹ */
+    
+    border-radius: 24px; /* Bo góc tròn trịa hơn */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Căn giữa theo chiều dọc */
-    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
     padding: 24px;
-    box-sizing: border-box; /* Giữ chuẩn kích thước 320x242 kể cả khi có padding */
+    box-sizing: border-box; 
     color: #ffffff;
-    transition: transform 0.3s ease; /* Hiệu ứng mượt mà khi di chuột vào */
+    transition: transform 0.3s ease, background 0.3s ease; 
 }
 
-/* Tương tác nhỏ: Nổi thẻ lên khi di chuột vào */
 .reasonCard:hover {
     transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1); /* Sáng lên một chút khi hover */
 }
 
 .reasonCard h3 {
-    font-size: 24px; /* Tiêu đề to hơn */
+    font-size: 24px; 
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 16px;
     line-height: 1.3;
-    font-family: 'UniNeueLight', sans-serif;
-
 }
 
 .reasonCard p {
-    font-size: 16px; /* Nội dung nhỏ hơn */
+    font-size: 16px; 
     margin: 0;
     line-height: 1.5;
-    color: #e5e7eb; /* Màu chữ hơi xám nhẹ để không gắt mắt */
-    font-family: 'UniNeueLight', sans-serif;
+    color: #cbd5e1; 
 }

@@ -1,7 +1,7 @@
 .footer {
   padding-top: 40px;
   padding-bottom: 20px;
-  background-color: rgb(5, 25, 34); /* Đảm bảo nền màu đen */
+  background-color: rgb(3, 12, 23); /* Đảm bảo nền màu đen */
   color: #fff;
   font-family: sans-serif;
 }
@@ -20,6 +20,14 @@
   background-color: #fff; 
   margin-top: 25px;
   margin-bottom: 15px;
+}
+
+.footer-top-border {
+  width: 100%;
+  height: 1px;
+  background-color: #fff; 
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 

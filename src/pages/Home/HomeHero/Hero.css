@@ -1,71 +1,65 @@
 .heroContainer {
     height: 713px; 
     display: flex;
-    justify-content: flex-start; /* SỬA LỖI: Ép toàn bộ khối chữ sang bên trái */
+    justify-content: flex-start; 
     align-items: center; 
-    padding-left: 120px; /* Chỉ giữ lề bên trái */
-    padding-right: 0; /* Xóa lề phải để hình vuông dính sát mép */
-    background-color: rgb(5, 25, 34); 
+    padding-left: 120px; 
+    background-color: #030c17; /* Màu nền navy cực đậm của thiết kế mới */
     position: relative; 
     overflow: hidden; 
 }
 
 .heroOvalLayer {
     position: absolute;
-    width: 1440px;
-    height: 441px;
-    
-    
-    background-color: rgba(37, 99, 235, 0.3); 
-    
+    width: 1700px;
+    height: 500px;
+    background-color: rgb(4, 59, 197); 
     border-radius: 50%;
-    filter: blur(100px); 
-    
-    /* Đặt vị trí Oval lệch sang trái và căn giữa theo chiều dọc để lót dưới chữ */
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    
-    z-index: 0; /* QUAN TRỌNG: Ép layer này chìm xuống dưới cùng */
-    pointer-events: none; /* Xuyên qua layer này để người dùng vẫn click được nút Register */
+    filter: blur(120px); 
+    top: -200px;
+    left: 0%;
+    z-index: 0; 
+    pointer-events: none;
 }
 
 .heroContent {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Đảm bảo chữ và nút đều căn trái thẳng hàng */
+    align-items: flex-start;
     gap: 20px; 
     max-width: 600px; 
     position: relative;
-    z-index: 2; /* Lớp ưu tiên cao hơn để không bị hình vuông đè lên chữ */
+    z-index: 2; 
 }
 
 .heroContent h1 {
-    font-size: 64px; /* Kích thước chữ to, nổi bật */
-    font-weight: 400;
-    line-height: 1.1;
+   font-size: 60px;
+    font-weight: 300;
+    line-height: 0.9;
     margin: 0;
     color: #ffffff;
-    font-family: 'UniNeueLight', sans-serif;
+    letter-spacing: 2px;
 }
 
-/* Tô màu xanh dương cho chữ Competition */
 .text-blue {
-    color: #2563eb; /* Mã màu xanh dương giống trong thiết kế */
+    display: inline-block;
+    font-size: 80px; 
+    font-weight: 800;
+    color: #4bd5ff;
+    margin-top: 5px; /* Tinh chỉnh khoảng cách trên dưới nếu cần */
+    text-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4); /* Xanh dương sáng hơn một chút để nổi trên nền tối */
 }
 
 .heroContent p {
     font-size: 20px;
-    color: #e2e8f0; /* Màu chữ trắng hơi xám để dễ đọc */
+    color: #cbd5e1; 
     margin: 10px 0 20px 0;
-    font-family: 'UniNeueLight', sans-serif;
 }
 
-.heroContainer-buttons {
-    display: flex;
-}
+.heroContainer-buttons { display: flex;
+    
+    }
 
-/* CSS cho nút Register theo phong cách Outline (viền trắng, nền trong suốt) */
 .register-btn {
     display: inline-flex;
     align-items: center;
@@ -75,41 +69,20 @@
     text-decoration: none;
     padding: 12px 28px;
     border: 1px solid #ffffff;
-    border-radius: 8px; /* Bo góc nhẹ */
+    border-radius: 8px; 
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 32px; /* Bo góc cực tròn */
+    z-index: 1; /* Nổi lên trên dải blur */
 }
 
-/* Hiệu ứng khi di chuột vào nút: Nền trắng, chữ đen (hoặc xanh) */
 .register-btn:hover {
     background-color: #ffffff;
-    color: #0f172a; /* Đổi màu chữ sang đen/xanh đen khi hover */
-    transform: translateY(-2px); /* Hiệu ứng nảy nhẹ lên */
-}
-
-/* RESPONSIVE (Cho điện thoại) */
-@media (max-width: 768px) {
-    .heroContainer {
-        padding: 0 30px;
-        height: 500px;
-    }
-    
-    .heroContent h1 {
-        font-size: 42px;
-    }
-    
-    .heroContent p {
-        font-size: 16px;
-    }
-}
-
-.animated-box {
-    position: absolute;
-    width: 668px; 
-    height: 713px; 
-    background-color: #DCE7FA; 
-    right: 0; /* Dính chặt mép phải */
-    top: 0; /* Khớp hoàn toàn từ trên xuống dưới */
-    z-index: 1; /* Nằm dưới phần chữ */
+    color: #0f172a; 
+    transform: translateY(-2px); 
 }

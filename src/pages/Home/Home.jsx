@@ -3,6 +3,7 @@ import AboutSection from "./HomeAbout/AboutSection.jsx";
 import WhyJoin from "./HomeWhy/WhyJoin.jsx";
 import Number from "./HomeNumber/Number.jsx";
 import Register from "./HomeRegister/Register.jsx";
+import "./Home.css";
 function Home() {
   return (
       <div style={{display: 'flex', flexDirection: 'column', gap: '0px'}}>
