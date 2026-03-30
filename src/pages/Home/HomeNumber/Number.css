@@ -29,7 +29,7 @@
 /* Thẻ kính trong suốt bọc toàn bộ nội dung */
 .numberContainer.glass-panel {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +45,7 @@
     z-index: 1; /* Nổi lên trên dải blur */
 }
 
-.numberLeft { flex: 1; max-width: 500px; }
+.numberLeft { flex: 1; max-width: 600px; }
 
 /* Đổi màu chữ sang trắng/xám vì nền giờ đã tối */
 .numberLeft h1 {
@@ -60,7 +60,7 @@
 .numberLeft p {
     font-size: 16px; 
     color: #cbd5e1; 
-    line-height: 1.5;
+    line-height: 0;
     margin: 0;
 }
 

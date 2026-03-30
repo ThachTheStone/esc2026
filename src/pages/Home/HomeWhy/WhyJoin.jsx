@@ -7,13 +7,13 @@ const WhyJoin = () => {
     return (
         <div className="whyContainer">
             {/* QUẦNG SÁNG BLUR CÓ ANIMATION: Trượt từ dưới đáy lên */}
-            <motion.div 
-                className="whyBottomBlur"
-                initial={{ opacity: 0, y: 150 }} 
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }} /* Chạy khi cuộn tới 30% phần này */
-                transition={{ duration: 1.5, ease: "easeOut" }}
-            ></motion.div>
+        <motion.div 
+            className="whyBottomBlur"
+            initial={{ opacity: 0, y: 100 }} 
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} /* Đã xóa amount: 0.3 để nó nhạy hơn, cứ lướt tới là hiện */
+            transition={{ duration: 1.2, ease: "easeOut" }}
+        ></motion.div>
 
             <h1 className="whyTitle">The Value of ESC</h1>
             

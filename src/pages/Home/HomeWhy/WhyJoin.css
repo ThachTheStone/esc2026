@@ -15,13 +15,19 @@
 /* --- QUẦNG SÁNG MỜ Ở ĐÁY --- */
 .whyBottomBlur {
     position: absolute;
-    bottom: -300px; 
-    left: 0%;
+    bottom: -200px; 
+    
+    /* Đã sửa left thành 50% để quầng sáng nằm ngay chính giữa */
+    left: -5%; 
     transform: translateX(-50%);
-    width: 1800px;
+    
+    width: 2000px;
     height: 500px;
+    
+    /* Đã sửa lỗi thiếu số của rgba (Thêm 0.6 để ánh sáng mờ ảo 60%) */
     background-color: rgba(4, 59, 197); 
-    filter: blur(120px); 
+    
+    filter: blur(100px); 
     border-radius: 50%;
     z-index: 0; 
     pointer-events: none; 
