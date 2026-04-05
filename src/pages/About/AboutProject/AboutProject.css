@@ -1,0 +1,104 @@
+/* --- LỚP BỌC TỔNG THỂ --- */
+.aboutProjectSection {
+    width: 100%;
+    height: 692px; /* Set cứng Height theo đúng Figma */
+    
+    /* Background màu xanh dâng từ dưới lên trên */
+    background: linear-gradient(to top, #0734A3, #11192A);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa mọi thứ theo chiều ngang */
+    padding-top: 35px; /* Tương đương tọa độ Y: 35 của Title */
+    box-sizing: border-box;
+    overflow: hidden; /* Tránh việc ảnh hover bị tràn ra khỏi khối */
+}
+
+/* --- KHU VỰC TITLE --- */
+.aboutProjectTitle {
+    width: 542px; /* Kích thước từ Figma */
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.aboutProjectTitle h2 {
+    font-size: 55px; /* Font size từ Figma */
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.text-highlight {
+    color: #4bd5ff; /* Màu xanh sáng của chữ Projects */
+}
+
+/* --- KHU VỰC LƯỚI CHỨA 4 ẢNH PROJECTS --- */
+.aboutProjectGrid {
+    /* Khoảng cách từ Title xuống khu vực này. 
+       (Dựa vào Y:191 của khung trừ đi Y và H của Title) */
+    margin-top: 28px; 
+    
+    width: 100%;
+    max-width: 1231.65px; /* Chiều rộng chính xác từ Figma */
+    height: 389.03px; /* Chiều cao chính xác từ Figma */
+    
+    display: flex;
+    justify-content: space-between; /* Đẩy 4 khung cách đều nhau */
+    gap: 20px; /* Khoảng cách an toàn giữa các khung */
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+/* --- TỪNG KHUNG ẢNH (CARD) --- */
+.projectCard {
+    flex: 1; /* Chia đều độ rộng cho 4 khung */
+    height: 100%;
+    
+    /* Bo góc chính xác theo yêu cầu */
+    border-radius: 15px; 
+    
+    /* Bắt buộc phải có lệnh này để ảnh không bị lòi ra ngoài phần bo góc */
+    overflow: hidden; 
+    
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Bóng đổ tạo chiều sâu ban đầu */
+    
+    /* Chuyển động mượt mà cho hiệu ứng hover bóng đổ */
+    transition: box-shadow 0.1s ease; 
+}
+
+/* Kích hoạt bóng sáng lên khi hover (Hiệu ứng scale và bay lên đã do Framer Motion lo) */
+.projectCard:hover {
+    box-shadow: 0 20px 40px rgba(20, 25, 27, 0.2); 
+}
+
+/* Định dạng ảnh bên trong khung */
+.projectCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh luôn lấp đầy khung mà không bị méo */
+    object-position: center;
+    display: block;
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI/TABLET --- */
+@media (max-width: 1024px) {
+    .aboutProjectSection {
+        height: auto;
+        padding-bottom: 60px;
+    }
+    .aboutProjectGrid {
+        height: auto;
+        flex-direction: column; /* Xếp dọc các ảnh trên điện thoại */
+        gap: 40px;
+    }
+    .projectCard {
+        height: 400px; /* Định hình chiều cao cố định cho từng ảnh khi xếp dọc */
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

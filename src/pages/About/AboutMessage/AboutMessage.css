@@ -1,0 +1,105 @@
+/* --- LỚP BỌC NGOÀI CÙNG (Chứa màu nền mặc định ban đầu) --- */
+.aboutMessageSection {
+    position: relative;
+    width: 100%;
+    /* Màu ban đầu trước khi có hiệu ứng */
+    background-color: #11192A; 
+    display: flex;
+    justify-content: center;
+}
+
+/* --- LỚP HIỆU ỨNG MÀU XANH NẰM ĐÈ LÊN --- */
+.aboutMessageBgOverlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Đây là dải màu xanh sẽ hiện dần lên */
+    background: linear-gradient(to bottom, #0734A3, #11192A);
+    z-index: 0; /* Nằm dưới content */
+}
+
+/* --- CONTAINER TỔNG THỂ --- */
+.aboutMessageContainer {
+    position: relative;
+    z-index: 1; /* Nổi lên trên lớp background */
+    width: 100%;
+    max-width: 1440px; 
+    height: 507px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* BẠN CÓ THỂ CHỈNH KHOẢNG CÁCH GIỮA ẢNH VÀ CHỮ Ở ĐÂY */
+    gap: 160px; /* Đã tăng từ 80px lên 120px để xa nhau ra 1 xí */
+    
+    padding: 0 80px; 
+    box-sizing: border-box;
+}
+
+/* --- CỘT TRÁI (HÌNH ẢNH) --- */
+.aboutMessageLeft {
+
+    width: 406px;
+    height: 383px;
+    
+    
+    border-radius: 191px; 
+    overflow: hidden; 
+    flex-shrink: 0; 
+    
+    /* Thêm chút bóng đổ để ảnh tách nhẹ khỏi nền (tùy chọn) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.aboutMessageLeft img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh tự động scale lấp đầy khu vực 406x383 */
+    object-position: center;
+}
+
+/* --- CỘT PHẢI (NỘI DUNG CHỮ) --- */
+.aboutMessageRight {
+    max-width: 700px; /* Giới hạn độ rộng để text tự động rớt dòng đẹp mắt */
+    color: #ffffff;
+}
+
+.aboutMessageRight h2 {
+    font-size: 55px; /* Font size chính xác theo yêu cầu */
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    /* font-family: 'Tên Font Của Bạn', sans-serif; */
+}
+
+/* Chữ highlight màu xanh lơ */
+.text-highlight {
+    color: #4bd5ff; 
+}
+
+.aboutMessageRight p {
+    font-size: 20px; /* Font size chính xác theo yêu cầu */
+    line-height: 1.6; /* Tăng khoảng cách dòng để dễ đọc hơn */
+    margin: 0;
+    color: #cbd5e1; /* Màu trắng xám dịu mắt cho văn bản dài */
+    /* font-family: 'Tên Font Của Bạn', sans-serif; */
+}
+
+/* --- RESPONSIVE (Cho điện thoại / Tablet) --- */
+@media (max-width: 1024px) {
+    .aboutMessageContainer {
+        height: auto; /* Thả tự do chiều cao trên màn nhỏ */
+        flex-direction: column; /* Đẩy chữ xuống dưới ảnh */
+        padding: 60px 30px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .aboutMessageLeft {
+        width: 300px; /* Thu nhỏ ảnh lại trên đt */
+        height: 283px;
+    }
+    
+    .aboutMessageRight h2 {
+        font-size: 42px;
+    }
+}
