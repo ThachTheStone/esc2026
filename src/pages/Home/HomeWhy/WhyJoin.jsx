@@ -21,14 +21,17 @@ const WhyJoin = () => {
                 <ReasonCard 
                     title={<>Real-World<br/>Confidence</>} 
                     content="Build confidence by speaking English in competitive, high-pressure situations." 
+                    titleColor="#CBEDFF"
                 />
                 <ReasonCard 
-                    title={<>Critical Thinking<br/>Growth</>} 
+                    title={<>Critical<br/>Thinking Growth</>} 
                     content="Develop deeper analysis and structured arguments on global issues." 
+                    titleColor="#CBEDFF"
                 />
                 <ReasonCard 
                     title={<>Powerful<br/>Networking</>} 
                     content="Connect with ambitious students and expand meaningful academic relationships." 
+                    titleColor="#CBEDFF"
                 />
             </div>
         </div>

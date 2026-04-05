@@ -1,10 +1,14 @@
-import React from "react";
-import "./ReasonCard.css";
+import React from 'react';
+import './ReasonCard.css';
 
-const ReasonCard = ({ title, content }) => {
+// Thêm prop titleColor vào đây
+const ReasonCard = ({ title, content, titleColor }) => {
     return (
         <div className="reasonCard">
-            <h3>{title}</h3>
+            {/* Sử dụng style inline để đổi màu. Nếu không truyền màu, mặc định sẽ là màu trắng (#ffffff) */}
+            <h3 style={{ color: titleColor || '#CBEDFF' }}>
+                {title}
+            </h3>
             <p>{content}</p>
         </div>
     );

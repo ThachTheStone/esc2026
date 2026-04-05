@@ -26,26 +26,64 @@
     pointer-events: none;
 }
 
-/* Thẻ kính trong suốt bọc toàn bộ nội dung */
-.numberContainer.glass-panel {
+.numberContainer {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 80px;
-    gap: 50px;
+    padding: 20px 0; /* Khoảng cách trên dưới */
+    z-index: 1; /* Nổi lên trên dải blur */
+    position: relative;
+}
+
+/* Thẻ kính trong suốt bọc toàn bộ nội dung */
+
+
+.numberLeft { 
+    flex: 1; 
+    max-width: 600px; 
+    padding-right: 60px; 
+    
+}
+
+/* Phần Kính chứa số liệu bên phải */
+.numberRight.glass-panel {
+    flex: 1;
+    max-width: 500px; /* Khống chế độ rộng của tấm kính */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia 2 cột đều nhau */
+    gap: 40px; 
+    
+    /* Khoảng cách từ viền kính vào trong các con số */
+    padding: 50px 30px; 
     
     /* Hiệu ứng Glassmorphism */
     background: rgba(255, 255, 255, 0.05); 
     backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1); 
-    border-radius: 32px; /* Bo góc cực tròn */
-    z-index: 1; /* Nổi lên trên dải blur */
+    border-radius: 32px; /* Bo góc tròn */
+    
+    /* Thêm bóng đổ nhẹ để tấm kính tách rời khỏi nền tối */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
+
+    transition: all 0.4s ease;
 }
 
-.numberLeft { flex: 1; max-width: 600px; }
+/* --- HIỆU ỨNG HOVER CHO KHỐI KÍNH --- */
+.numberRight.glass-panel:hover {
+    transform: translateY(-10px); /* Nảy khối kính lên trên 10px */
+    
+    /* Tăng độ sáng của lớp kính lên một chút (từ 0.05 lên 0.08) */
+    background: rgba(255, 255, 255, 0.08); 
+    
+    /* Làm viền kính rõ nét hơn */
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    
+    /* Bóng đổ đậm hơn phía dưới, kèm theo một quầng sáng màu xanh nhạt tỏa ra xung quanh */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.15); 
+}
 
 /* Đổi màu chữ sang trắng/xám vì nền giờ đã tối */
 .numberLeft h1 {

@@ -45,7 +45,7 @@
     display: inline-block;
     font-size: 80px; 
     font-weight: 800;
-    color: #4bd5ff;
+    color: #45BFFF;
     margin-top: 5px; /* Tinh chỉnh khoảng cách trên dưới nếu cần */
     text-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4); /* Xanh dương sáng hơn một chút để nổi trên nền tối */
 }
@@ -85,4 +85,108 @@
     background-color: #ffffff;
     color: #0f172a; 
     transform: translateY(-2px); 
+}
+
+.glass-rect {
+    position: absolute;
+    width: 750px; 
+    height: 2000px; 
+    
+    /* GIAO DIỆN KÍNH 2.0: Phản chiếu ánh sáng rõ rệt hơn */
+    background: linear-gradient(
+        200deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.02) 100%
+    ); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Viền trắng sáng hơn (20%) và dày hơn (1.5px) để dễ nhìn */
+    border: 1.5px solid rgba(255, 255, 255, 0.2); 
+    
+    /* Thêm bóng đổ nhẹ phía sau để tách biệt kính với nền đen */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    border-radius: 40px; 
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+/* --- CSS KHUNG ẢNH BÊN PHẢI (SỬ DỤNG CSS GRID) --- */
+.heroImageFrames {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa toàn bộ cụm ảnh theo chiều dọc */
+    right: 120px; 
+    
+    /* Thiết lập kích thước TỔNG của cả khu vực chứa 3 ảnh */
+    width: 600px; 
+    height: 600px; 
+    
+    /* BẬT CHẾ ĐỘ LƯỚI GRID */
+    display: grid; 
+    /* Chia làm 2 cột bằng nhau (Mỗi cột chiếm 1 phần - 1fr) */
+    grid-template-columns: 1fr 1fr; 
+    /* Chia làm 2 hàng: Hàng trên 2 phần (2/3), Hàng dưới 1 phần (1/3) */
+    grid-template-rows: 2fr 1fr; 
+    
+    /* KHOẢNG CÁCH: Đảm bảo các khung không bao giờ dính sát vào nhau */
+    gap: 26px; 
+    
+    z-index: 1; 
+}
+
+/* Định dạng chung cho cả 3 khung */
+.frame-item {
+    position: relative;
+    width: 100%; /* Bung đầy diện tích được chia trong lưới Grid */
+    height: 100%; 
+    border-radius: 40px; /* Bo góc cực tròn giống thiết kế */
+    
+    /* Hiệu ứng kính và bóng đổ để nổi bật trên nền */
+    border: 2px ; 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); 
+    overflow: hidden; /* Cắt ảnh thừa ở các góc bo tròn */
+}
+
+/* Định dạng hình ảnh bên trong */
+.frame-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Tự động cắt cúp ảnh vừa vặn với khung mà không méo */
+    object-position: center; 
+    display: block;
+}
+
+/* --- XẾP CHỖ CHO TỪNG KHUNG VÀO LƯỚI --- */
+
+/* Ảnh nằm BÊN TRÁI - PHÍA TRÊN */
+.frame-left-top {
+    grid-column: 1; /* Nằm ở cột 1 */
+    grid-row: 1;    /* Nằm ở hàng 1 (Chiếm 2/3 chiều cao) */
+}
+
+/* Ảnh nằm BÊN TRÁI - PHÍA DƯỚI */
+.frame-left-bottom {
+    grid-column: 1; /* Nằm ở cột 1 */
+    grid-row: 2;    /* Nằm ở hàng 2 (Chiếm 1/3 chiều cao) */
+}
+
+/* Ảnh nằm BÊN PHẢI */
+.frame-right {
+    grid-column: 2; /* Nằm ở cột 2 */
+    
+    /* Nằm bắt đầu từ hàng 1, và kéo dài gộp luôn cả 2 hàng (100% chiều cao) */
+    grid-row: 1 / span 2; 
+}
+
+/* RESPONSIVE (Cho màn hình nhỏ) */
+@media (max-width: 1024px) {
+    .heroImageFrames {
+        right: 40px;
+        width: 450px;
+        height: 450px;
+        gap: 16px;
+        border-radius: 24px;
+    }
 }

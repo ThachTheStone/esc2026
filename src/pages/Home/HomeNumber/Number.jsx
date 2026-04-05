@@ -23,7 +23,6 @@ const Counter = ({ to, suffix }) => {
 const Number = () => {
     return (
         <div className="numberSectionWrapper">
-            {/* DẢI BLUR DƯỚI BỨC ẢNH: Trượt từ trên (bức ảnh) xuống từ từ */}
             <motion.div 
                 className="numberBlurLayer"
                 initial={{ opacity: 0, y: -150 }} 
@@ -32,7 +31,8 @@ const Number = () => {
                 transition={{ duration: 1.5, ease: "easeOut" }}
             ></motion.div>
 
-            <div className="numberContainer glass-panel">
+            
+            <div className="numberContainer">
                 <div className="numberLeft">
                     <h1>
                         Competition <span className="highlight-light-blue">Highlights</span>
@@ -40,7 +40,8 @@ const Number = () => {
                     <p>A snapshot of ESC's growth, impact, and nationwide reach over the years.</p>
                 </div>
 
-                <div className="numberRight">
+                {/* THÊM class glass-panel vào thẻ này để nó biến thành thẻ kính */}
+                <div className="numberRight glass-panel">
                     <div className="statItem">
                         <div className="statIcon"><img src={microIcon} alt=""/></div>
                         <div className="statText">

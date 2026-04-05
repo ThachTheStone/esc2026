@@ -36,7 +36,7 @@
 .whyTitle {
     font-size: 4rem; 
     font-weight: 700;
-    color: #4bd5ff; /* Đổi sang màu xanh lơ sáng chói theo yêu cầu */
+    color: #45BFFF; /* Đổi sang màu xanh lơ sáng chói theo yêu cầu */
     margin-top: 0;
     margin-bottom: 50px; 
     text-align: center;
@@ -46,6 +46,7 @@
 }
 
 .whyCards {
+   
     display: flex;
     justify-content: center;
     gap: 40px; 
@@ -54,3 +55,5 @@
     position: relative; /* Giúp các card nổi lên trên quầng sáng */
     z-index: 1; 
 }
+
+
