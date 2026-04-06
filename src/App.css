@@ -26,73 +26,16 @@ a {
     background-color: black;
 }
 
-@font-face {
-    font-family: 'UniNeueHeavy-Italic';
-    src: url('./assets/fonts/UNHI/uni-neue-heavy-italic.eot');
-    src: url('./assets/fonts/UNHI/uni-neue-heavy-italic.eot?#iefix') format('embedded-opentype'),
-         url('./assets/fonts/UNHI/uni-neue-heavy-italic.woff2') format('woff2'),
-         url('./assets/fonts/UNHI/uni-neue-heavy-italic.woff') format('woff'),
-         url('./assets/fonts/UNHI/uni-neue-heavy-italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-	font-family: 'UniNeueLight';
-	src: url('./assets/fonts/UNLWF/uni-neue-light.eot');
-	src: url('./assets/fonts/UNLWF/uni-neue-light.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/UNLWF/uni-neue-light.woff2') format('woff2'),
-	    url('./assets/fonts/UNLWF/uni-neue-light.woff') format('woff'),
-        url('./assets/fonts/UNLWF/uni-neue-light.ttf') format('truetype'),
-        url('./assets/fonts/UNLWF/uni-neue-light.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'YWFTRegistraat-RegularPlainDemo';
-	src: url('./src/assets/fonts/YRRDWF/ywft-registraat-regular-plain-demo.eot');
-	src: url('./src/assets/fonts/YRRDWF/ywft-registraat-regular-plain-demo.eot?#iefix') format('embedded-opentype'),
-        url('./src/assets/fonts/YRRDWF/ywft-registraat-regular-plain-demo.woff2') format('woff2'),
-	    url('./src/assets/fonts/YRRDWF/ywft-registraat-regular-plain-demo.woff') format('woff'),
-	    url('./src/assets/fonts/YRRDWF/ywft-registraat-regular-plain-demo.ttf') format('truetype'),
-	    url('./src/assets/fonts/YRRDWF/ywft-registraat-regular-plain-demo.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'YWFTRegistraat-RegularItalicDemo';
-	src: url('./src/assets/fonts/YRRIDWF/ywft-registraat-regular-italic-demo.eot');
-	src: url('./src/assets/fonts/YRRIDWF/ywft-registraat-regular-italic-demo.eot?#iefix') format('embedded-opentype'),
-             url('./src/assets/fonts/YRRIDWF/ywft-registraat-regular-italic-demo.woff2') format('woff2'),
-	     url('./src/assets/fonts/YRRIDWF/ywft-registraat-regular-italic-demo.woff') format('woff'),
-	     url('./src/assets/fonts/YRRIDWF/ywft-registraat-regular-italic-demo.ttf') format('truetype'),
-	     url('./src/assets/fonts/YRRIDWF/ywft-registraat-regular-italic-demo.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Departura-ExtraLight';
-	src: url('./src/assets/fonts/DEWF/departura-extralight.eot');
-	src: url('./src/assets/fonts/DEWF/departura-extralight.eot?#iefix') format('embedded-opentype'),
-        url('./src/assets/fonts/DEWF/departura-extralight.woff2') format('woff2'),
-	    url('./src/assets/fonts/DEWF/departura-extralight.woff') format('woff'),
-	    url('./src/assets/fonts/DEWF/departura-extralight.ttf') format('truetype'),
-	    url('./src/assets/fonts/DEWF/departura-extralight.svg#youworkforthem') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
 
 /*Jost*/
 
 @font-face {
     font-family: 'Jost';
-    src: url('./src/assets/fonts/Jonts/Jost-Regular.eot');
-    src: url('./src/assets/fonts/Jonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./src/assets/fonts/Jonts/Jost-Regular.woff2') format('woff2'),
-        url('./src/assets/fonts/Jonts/Jost-Regular.woff') format('woff');
+    src: url('./assets/fonts/Jonts/Jost-Regular.eot');
+    src: url('./assets/fonts/Jonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Jonts/Jost-Regular.woff2') format('woff2'),
+        url('./assets/fonts/Jonts/Jost-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -100,10 +43,10 @@ a {
 
 @font-face {
     font-family: 'Jost';
-    src: url('./src/assets/fonts/Jonts/Jost-Bold.eot');
-    src: url('./src/assets/fonts/Jonts/Jost-Bold.eot?#iefix') format('embedded-opentype'),
-        url('./src/assets/fonts/Jonts/Jost-Bold.woff2') format('woff2'),
-        url('./src/assets/fonts/Jonts/Jost-Bold.woff') format('woff');
+    src: url('./assets/fonts/Jonts/Jost-Bold.eot');
+    src: url('./assets/fonts/Jonts/Jost-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Jonts/Jost-Bold.woff2') format('woff2'),
+        url('./assets/fonts/Jonts/Jost-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -111,21 +54,21 @@ a {
 
 @font-face {
     font-family: 'Jost';
-    src: url('./src/assets/fonts/Jonts/Jost-ExtraBold.eot');
-    src: url('./src/assets/fonts/Jonts/Jost-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('./src/assets/fonts/Jonts/Jost-ExtraBold.woff2') format('woff2'),
-        url('./src/assets/fonts/Jonts/Jost-ExtraBold.woff') format('woff');
-    font-weight: bold;
+    src: url('./assets/fonts/Jonts/Jost-ExtraBold.eot');
+    src: url('./assets/fonts/Jonts/Jost-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Jonts/Jost-ExtraBold.woff2') format('woff2'),
+        url('./assets/fonts/Jonts/Jost-ExtraBold.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Jost';
-    src: url('./src/assets/fonts/Jonts/Jost-SemiBold.eot');
-    src: url('./src/assets/fonts/Jonts/Jost-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('./src/assets/fonts/Jonts/Jost-SemiBold.woff2') format('woff2'),
-        url('./src/assets/fonts/Jonts/Jost-SemiBold.woff') format('woff');
+    src: url('./assets/fonts/Jonts/Jost-SemiBold.eot');
+    src: url('./assets/fonts/Jonts/Jost-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Jonts/Jost-SemiBold.woff2') format('woff2'),
+        url('./assets/fonts/Jonts/Jost-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
