@@ -38,6 +38,8 @@
     line-height: 0.9;
     margin: 0;
     color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
     letter-spacing: 2px;
 }
 
@@ -46,6 +48,8 @@
     font-size: 80px; 
     font-weight: 800;
     color: #45BFFF;
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
     margin-top: 5px; /* Tinh chỉnh khoảng cách trên dưới nếu cần */
     text-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4); /* Xanh dương sáng hơn một chút để nổi trên nền tối */
 }
@@ -54,6 +58,8 @@
     font-size: 20px;
     color: #cbd5e1; 
     margin: 10px 0 20px 0;
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
 }
 
 .heroContainer-buttons { display: flex;

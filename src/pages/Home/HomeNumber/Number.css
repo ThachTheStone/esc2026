@@ -45,7 +45,10 @@
     max-width: 600px; 
     padding-right: 60px; 
     
+    
 }
+
+
 
 /* Phần Kính chứa số liệu bên phải */
 .numberRight.glass-panel {
@@ -91,6 +94,8 @@
     font-weight: 700;
     color: #ffffff; 
     margin: 0 0 16px 0;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
 }
 
 .highlight-light-blue { color: #60a5fa; } /* Xanh dương nhạt cho dễ đọc */
@@ -100,6 +105,8 @@
     color: #cbd5e1; 
     line-height: 0;
     margin: 0;
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
 }
 
 .numberRight {
@@ -138,10 +145,14 @@
     font-weight: 700;
     color: #ffffff; /* Con số màu trắng */
     margin: 0 0 4px 0; line-height: 1;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
 }
 
 .statText p {
     font-size: 16px; 
     color: #cbd5e1; /* Nội dung màu xám nhạt */
     margin: 0; line-height: 1;
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
 }

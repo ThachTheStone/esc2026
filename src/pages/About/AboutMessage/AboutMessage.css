@@ -68,7 +68,8 @@
     font-weight: 700;
     margin: 0 0 20px 0;
     line-height: 1.2;
-    /* font-family: 'Tên Font Của Bạn', sans-serif; */
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
 }
 
 /* Chữ highlight màu xanh lơ */
@@ -81,7 +82,8 @@
     line-height: 1.6; /* Tăng khoảng cách dòng để dễ đọc hơn */
     margin: 0;
     color: #cbd5e1; /* Màu trắng xám dịu mắt cho văn bản dài */
-    /* font-family: 'Tên Font Của Bạn', sans-serif; */
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
 }
 
 /* --- RESPONSIVE (Cho điện thoại / Tablet) --- */

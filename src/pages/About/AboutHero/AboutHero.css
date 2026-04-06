@@ -63,14 +63,16 @@
     font-size: 96px;
     margin: 0 0 3px 0;
     color: rgb(69, 191, 255);
-    /* font-family: ; (Thêm font của bạn) */
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
 }
 
 .aboutHeroTitles p {
     font-size: 25px;
     margin: 0;
     /* color: ; (Thêm màu của bạn) */
-    /* font-family: ; (Thêm font của bạn) */
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
 }
 
 .aboutHeroCards {
@@ -134,15 +136,16 @@
     font-size: 25px;
     margin: 0 0 8px 0;
     color: rgb(69, 191, 255);
-    /* font-family: ; (Thêm font của bạn) */
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
 }
 
 .aboutCardText p {
     font-size: 14px;
     margin: 0;
     line-height: 1.4;
-    /* color: ; (Thêm màu của bạn) */
-    /* font-family: ; (Thêm font của bạn) */
+    font-family: 'Jost', sans-serif;
+    font-weight: normal;
 }
 
 .aboutCardText span {

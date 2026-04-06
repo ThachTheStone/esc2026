@@ -89,10 +89,10 @@ a {
 
 @font-face {
     font-family: 'Jost';
-    src: url('Jost-Regular.eot');
-    src: url('Jost-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Jost-Regular.woff2') format('woff2'),
-        url('Jost-Regular.woff') format('woff');
+    src: url('./src/assets/fonts/Jonts/Jost-Regular.eot');
+    src: url('./src/assets/fonts/Jonts/Jost-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./src/assets/fonts/Jonts/Jost-Regular.woff2') format('woff2'),
+        url('./src/assets/fonts/Jonts/Jost-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -100,10 +100,10 @@ a {
 
 @font-face {
     font-family: 'Jost';
-    src: url('Jost-Bold.eot');
-    src: url('Jost-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Jost-Bold.woff2') format('woff2'),
-        url('Jost-Bold.woff') format('woff');
+    src: url('./src/assets/fonts/Jonts/Jost-Bold.eot');
+    src: url('./src/assets/fonts/Jonts/Jost-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./src/assets/fonts/Jonts/Jost-Bold.woff2') format('woff2'),
+        url('./src/assets/fonts/Jonts/Jost-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -111,10 +111,10 @@ a {
 
 @font-face {
     font-family: 'Jost';
-    src: url('Jost-ExtraBold.eot');
-    src: url('Jost-ExtraBold.eot?#iefix') format('embedded-opentype'),
-        url('Jost-ExtraBold.woff2') format('woff2'),
-        url('Jost-ExtraBold.woff') format('woff');
+    src: url('./src/assets/fonts/Jonts/Jost-ExtraBold.eot');
+    src: url('./src/assets/fonts/Jonts/Jost-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('./src/assets/fonts/Jonts/Jost-ExtraBold.woff2') format('woff2'),
+        url('./src/assets/fonts/Jonts/Jost-ExtraBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -122,10 +122,10 @@ a {
 
 @font-face {
     font-family: 'Jost';
-    src: url('Jost-SemiBold.eot');
-    src: url('Jost-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('Jost-SemiBold.woff2') format('woff2'),
-        url('Jost-SemiBold.woff') format('woff');
+    src: url('./src/assets/fonts/Jonts/Jost-SemiBold.eot');
+    src: url('./src/assets/fonts/Jonts/Jost-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./src/assets/fonts/Jonts/Jost-SemiBold.woff2') format('woff2'),
+        url('./src/assets/fonts/Jonts/Jost-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;

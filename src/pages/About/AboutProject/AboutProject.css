@@ -16,7 +16,7 @@
 
 /* --- KHU VỰC TITLE --- */
 .aboutProjectTitle {
-    width: 542px; /* Kích thước từ Figma */
+    width: 542px;
     height: 128px;
     display: flex;
     justify-content: center;
@@ -25,10 +25,12 @@
 }
 
 .aboutProjectTitle h2 {
-    font-size: 55px; /* Font size từ Figma */
+    font-size: 55px;
     font-weight: bold;
     color: #ffffff;
     margin: 0;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
 }
 
 .text-highlight {
