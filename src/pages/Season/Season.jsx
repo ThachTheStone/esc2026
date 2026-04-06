@@ -31,11 +31,12 @@ const Season = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                    whileHover={{ scale: 1.03, transition: { duration: 0.2, ease: "easeOut" } }}
                 >
                     <div className="season-image-wrapper">
                         <img src={img2023} alt="ESC 2023" />
                     </div>
-                    <div className="season-content">
+                    <div className="season-content-1">
                         <h3>ESC 2023</h3>
                         <div className="season-actions">
                             <span className="status-badge completed">Completed</span>
@@ -51,8 +52,8 @@ const Season = () => {
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-                    whileHover={{ y: -15, transition: { duration: 0.3 } }}
+                    transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
+                    whileHover={{ scale: 1.03, transition: { duration: 0.2, ease: "easeOut" } }}
                 >
                     <div className="season-image-wrapper">
                         <img src={img2026} alt="ESC 2026" />
@@ -60,9 +61,9 @@ const Season = () => {
                     <div className="season-content">
                         <h3>ESC 2026</h3>
                         <div className="season-actions">
-                            <span className="status-badge inprogress">In progress</span>
+                            <span className="status-badge-1 inprogress">In progress</span>
                             {/* Class active-btn để làm hiệu ứng hover riêng cho nút */}
-                            <Link to="/currentSeason" className="view-btn active-btn">View &rarr;</Link>
+                            <Link to="/currentSeason" className="view-btn-1 active-btn">View &rarr;</Link>
                         </div>
                     </div>
                 </motion.div>
@@ -74,11 +75,12 @@ const Season = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+                    whileHover={{ scale: 1.03, transition: { duration: 0.2, ease: "easeOut" } }}
                 >
                     <div className="season-image-wrapper">
                         <img src={img2025} alt="ESC 2025" />
                     </div>
-                    <div className="season-content">
+                    <div className="season-content-1">
                         <h3>ESC 2025</h3>
                         <div className="season-actions">
                             <span className="status-badge completed">Completed</span>
