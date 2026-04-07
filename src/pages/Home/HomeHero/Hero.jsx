@@ -2,8 +2,8 @@ import React from "react";
 import "./Hero.css";
 import { motion } from "framer-motion";
 import Pic1 from "../../../assets/picture/Hero/DSC06449.png"; 
-import Pic2 from "../../../assets/picture/Hero/DSC07175.JPG"; 
-import Pic3 from "../../../assets/picture/Hero/DSC07175.JPG";
+import Pic2 from "../../../assets/picture/Hero/Hero3.png"; 
+import Pic3 from "../../../assets/picture/Hero/Hero2.jpg";
 const Hero = () => {
     return (
         <div className="heroContainer">

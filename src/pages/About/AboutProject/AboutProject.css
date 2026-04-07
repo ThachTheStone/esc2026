@@ -44,8 +44,8 @@
     margin-top: 28px; 
     
     width: 100%;
-    max-width: 1231.65px; /* Chiều rộng chính xác từ Figma */
-    height: 389.03px; /* Chiều cao chính xác từ Figma */
+    max-width: 1500px; /* Chiều rộng chính xác từ Figma */
+    height: 450px; /* Chiều cao chính xác từ Figma */
     
     display: flex;
     justify-content: space-between; /* Đẩy 4 khung cách đều nhau */

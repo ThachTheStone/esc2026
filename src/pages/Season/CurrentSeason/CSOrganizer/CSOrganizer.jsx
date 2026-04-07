@@ -32,7 +32,7 @@ const CSOrganizer = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
-                    <img src={FPTLogo} alt="FPT University Organizer" />
+                    <div className="or-logo"><img src={FPTLogo} alt="FPT University Organizer" /></div>
                 </motion.div>
 
                 {/* LOGO PHẢI (SKILLCETERA) - Trễ hơn một chút (0.4s) */}
@@ -43,7 +43,7 @@ const CSOrganizer = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 >
-                    <img src={SkillceteraLogo} alt="Skillcetera Organizer" />
+                    <div className="or-logo"><img src={SkillceteraLogo} alt="Skillcetera Organizer" /></div>
                 </motion.div>
 
             </div>

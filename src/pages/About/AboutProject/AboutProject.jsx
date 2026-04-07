@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 // TODO: Thay các link ảnh này bằng 4 ảnh project thật của bạn
 import ProjImg1 from "../../../assets/picture/About/AboutProj/ESC.jpg";
-import ProjImg2 from "../../../assets/picture/About/AboutProj/ESC.jpg";
-import ProjImg3 from "../../../assets/picture/About/AboutProj/ESC.jpg";
-import ProjImg4 from "../../../assets/picture/About/AboutProj/ESC.jpg";
+import ProjImg2 from "../../../assets/picture/About/AboutProj/SH 3.jpg";
+import ProjImg3 from "../../../assets/picture/About/AboutProj/SP8.jpg";
+import ProjImg4 from "../../../assets/picture/About/AboutProj/TEDx3.jpg";
 
 const AboutProject = () => {
     return (

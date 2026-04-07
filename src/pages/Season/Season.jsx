@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import "./Season.css";
 
 // TODO: Đổi đường dẫn thành ảnh thật của bạn sau
-import img2023 from "../../assets/picture/Season/ESC2026.jpg";
+import img2023 from "../../assets/picture/Season/ESC2023.jpg";
 import img2026 from "../../assets/picture/Season/ESC2026.jpg";
-import img2025 from "../../assets/picture/Season/ESC2026.jpg";
+import img2025 from "../../assets/picture/Season/ESC2025.jpg";
 
 const Season = () => {
     return (

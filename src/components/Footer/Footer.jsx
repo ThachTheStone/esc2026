@@ -19,17 +19,17 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4>About us</h4>
                         <ul>
-                            <li><a href="#">About Skillcetera</a></li>
-                            <li><a href="#">About ESC</a></li>
-                            <li><a href="#">About our partner</a></li>
+                            <li><a href="/About">About Skillcetera</a></li>
+                            <li><a href="/CurrentSeason">About ESC</a></li>
+                            <li><a href="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fskillcetera%2Fposts%2Fpfbid0snAEV74viHdQn7SS45ZxEr93bQL2isTWZ5iZk6m3ULn7tqeFCcoFmiPnSLzgBVjjl&show_text=true&width=500">About our partner</a></li>
                         </ul>
                     </div>
                     <div className="footer-column">
                         <h4>Follow us</h4>
                         <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Tik Tok</a></li>
-                            <li><a href="#">Youtube</a></li>
+                            <li><a href="https://www.facebook.com/skillcetera">Facebook</a></li>
+                            <li><a href="https://www.tiktok.com/@skillcetera_club?lang=en">Tik Tok</a></li>
+                            <li><a href="https://www.youtube.com/@skillcetera">Youtube</a></li>
                         </ul>
                     </div>
                 </div>

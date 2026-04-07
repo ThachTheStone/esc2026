@@ -48,6 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+
 }
 
 .organizer-logo-wrapper img {
@@ -57,8 +59,16 @@
     /* CỰC KỲ QUAN TRỌNG: Giúp logo không bao giờ bị méo hay bị cắt xén */
     object-fit: contain; 
 }
-
-.organizer-logo:hover {
+.or-logo{
+        flex: 1;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    
+    /* Animation nảy lên khi hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.or-logo:hover {
     transform: translateY(-8px); 
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
 }

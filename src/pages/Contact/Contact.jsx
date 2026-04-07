@@ -1,62 +1,98 @@
+import React from "react";
+import { motion } from "framer-motion";
 import "./Contact.css";
-import contactIcon from "../../assets/picture/contact.png";
-import emailIcon from "../../assets/picture/email.png";
-import mediaIcon from "../../assets/picture/social-media.png";
-import supportIcon from "../../assets/picture/support.png";
-import fbIcon from "../../assets/picture/facebook.png";
-import insIcon from "../../assets/picture/instagram.png";
 
-function Contact() {
-  return (
-    <div className="body-content">
-      <h1 className="contact-title">CONTACT US</h1>
+// LƯU Ý: Khuyên bạn nên đổi tên file "logo trắng.png" thành "logo-trang.png" trong máy tính của bạn nhé
+import MainLogo from "../../assets/picture/Contact/logo trắng.png"; 
+import PhoneIcon from "../../assets/picture/Contact/phone-calling-svgrepo-com.svg";
+import MailIcon from "../../assets/picture/Contact/mail-open-alt-svgrepo-com.svg";
+import HeartIcon from "../../assets/picture/Contact/heart-svgrepo-com.svg";
+import FbIcon from "../../assets/picture/facebook.png";
+import TiktokIcon from "../../assets/picture/Contact/tiktok-logo-thin-svgrepo-com.svg";
+import YtIcon from "../../assets/picture/Contact/youtube-round-svgrepo-com.svg";
 
-      {/* The container for the four boxes */}
-      <div className="contact-grid">
-        {/* Box 1 */}
-        <div className="contact-box">
-          <div className="icon-placeholder"><img src={contactIcon} alt=""/></div>
-          <div className="box-content">
-            <h2>Text us at: [number]</h2>
-            <p>Message and data rates may apply</p>
-            <a href="#">Text Us: →</a>
-          </div>
-        </div>
+const Contact = () => {
+    return (
+        <div className="contact-container">
+            <div className="contact-content-wrapper">
+                
+                {/* CỘT TRÁI: TITLE & LOGO */}
+                <motion.div 
+                    className="contact-left"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <h2 className="contact-title">CONTACT US.</h2>
+                    <div className="contact-logo">
+                        <img src={MainLogo} alt="Skillcetera Logo" />
+                    </div>
+                </motion.div>
 
-        {/* Box 2 */}
-        <div className="contact-box">
-          <div className="icon-placeholder"><img src={supportIcon} alt=""/></div>
-          <div className="box-content">
-            <h2>Call us at: 0935588268</h2>
-            <p>Available 7am-11pm, 7 days a week</p>
-            <a href="#">Call Us: →</a>
-          </div>
-        </div>
+                {/* CỘT PHẢI: KHUNG KÍNH THÔNG TIN */}
+                <motion.div 
+                    className="contact-right"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                >
+                    <div className="contact-glass-box">
+                        
+                        {/* 1. MỤC PHONE */}
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <img src={PhoneIcon} alt="Phone" />
+                            </div>
+                            <div className="contact-info">
+                                <h3>Phone</h3>
+                                <p>093 558 8268</p>
+                            </div>
+                        </div>
 
-        {/* Box 3 */}
-        <div className="contact-box">
-          <div className="icon-placeholder"><img src={emailIcon} alt=""/></div>
-          <div className="box-content">
-            <h2>Email us at: skillcetera@esc.org</h2>
-            <p>We'd love to hear from you</p>
-            <a href="skillcetera@gmail.com">Email Us:</a>
-          </div>    
-        </div>
+                        {/* 2. MỤC MAIL */}
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <img src={MailIcon} alt="Mail" />
+                            </div>
+                            <div className="contact-info">
+                                <h3>Mail</h3>
+                                <p>skillcetera@gmail.com</p>
+                            </div>
+                        </div>
 
-        {/* Box 4 */}
-        <div className="contact-box">
-          <div className="icon-placeholder"><img src={mediaIcon} alt=""/></div>
-          <div className="box-content">
-            <h2>Our social media:</h2>
-            <div className="social-icons">
-              {/* Add your social media icons here */}
-              <span><img src={fbIcon} alt=""/></span> <span><img src={insIcon} alt=""/></span>
+                        {/* 3. MỤC FOLLOW US */}
+                        <div className="contact-item">
+                            <div className="contact-icon">
+                                <img src={HeartIcon} alt="Follow Us" />
+                            </div>
+                            <div className="contact-info">
+                                <h3>Follow us</h3>
+                                
+                                {/* CÁC NÚT MẠNG XÃ HỘI (Đã xóa các chữ FB, IG, TT) */}
+                                <div className="social-links">
+                                    <a href="https://www.facebook.com/skillcetera" target="_blank" rel="noopener noreferrer" className="social-btn">
+                                        <img src={FbIcon} alt="Facebook" />
+                                    </a>
+                                    
+                                    <a href="https://www.youtube.com/@skillcetera" target="_blank" rel="noopener noreferrer" className="social-btn">
+                                        <img src={YtIcon} alt="YouTube"/>
+                                    </a>
+                                    
+                                    <a href="https://www.tiktok.com/@skillcetera_club" target="_blank" rel="noopener noreferrer" className="social-btn">
+                                        <img src={TiktokIcon} alt="TikTok" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </motion.div>
+
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
-}
+    );
+};
 
 export default Contact;
