@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./CSJudge.css";
 
 // TODO: Đổi đường dẫn thành ảnh giám khảo thật của bạn
-import Judge1 from "../../../../assets/picture/Season/Jack.jpg";
+import Judge1 from "../../../../assets/picture/Season/TNP.png";
 import Judge2 from "../../../../assets/picture/Season/Jack.jpg";
 import Judge3 from "../../../../assets/picture/Season/Mi.jpg";
 
