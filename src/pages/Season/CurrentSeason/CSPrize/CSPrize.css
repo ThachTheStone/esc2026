@@ -1,0 +1,185 @@
+/* --- LỚP BỌC TỔNG THỂ --- */
+.cs-prize-container {
+    width: 100%;
+    height: 700px; /* Chiều cao cố định theo yêu cầu */
+    
+    /* Background chạy từ xanh dương sang xanh biển đậm, không animation */
+    background: linear-gradient(to bottom, #092F90, #0A1325);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.cs-prize-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0 0 60px 0;
+    
+    background: linear-gradient(to bottom, #FFFFFF 0%, #45BFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    line-height: 1.2;
+    padding-bottom: 5px;
+}
+
+/* --- KHU VỰC LƯỚI CARD --- */
+.cs-prize-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Khoảng cách giữa 3 thẻ */
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- ĐỊNH DẠNG TỔNG THỂ THẺ --- */
+.prize-card {
+    width: 380px; 
+    height: 460px; 
+    border-radius: 24px;
+    overflow: hidden;
+    
+    /* 🔴 THÊM HIỆU ỨNG KÍNH CHO TOÀN BỘ THẺ Ở ĐÂY */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    
+    /* Xóa transform ở đây, chỉ giữ lại hiệu ứng đổi bóng mượt mà */
+    transition: box-shadow 0.3s ease; 
+}
+
+.prize-card:hover {
+    /* Đã chuyển lệnh scale qua JSX, ở đây chỉ đổi bóng cho đậm hơn */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); 
+}
+
+
+.prize-action-bar {
+    width: 100%;
+    height: 80px; 
+
+    background: transparent; 
+    border-top: 1px solid rgba(255, 255, 255, 0.15); 
+    
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+
+/* --- PHẦN 1: KHU VỰC ẢNH HÌNH VUÔNG --- */
+.prize-img-wrapper {
+    width: 100%;
+    height: 380px; /* Chiều cao bằng chiều rộng để tạo hình vuông */
+}
+
+.prize-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- PHẦN 2: THANH CHỨA NÚT VIEW (GLASSMORPHISM) --- */
+.prize-action-bar {
+    width: 100%;
+    height: 80px; /* Cao đúng 80px như bạn yêu cầu */
+    
+    /* Texture Glassmorphism cho phần viền dưới */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Đường line mờ ngăn cách với ảnh */
+    
+    display: flex;
+    justify-content: flex-end; /* Đẩy nút View sang sát bên phải */
+    align-items: center; /* Căn giữa nút theo chiều dọc */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- NÚT VIEW --- */
+.prize-view-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    
+    /* Nút cũng có hiệu ứng kính đục hơn một chút để nổi bật */
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.prize-view-btn:hover {
+    background: rgba(255, 255, 255, 0.35); /* Sáng lên khi rê chuột vào chữ View */
+}
+
+
+
+/* =========================================
+   CHẾ ĐỘ XEM TOÀN MÀN HÌNH (MODAL)
+========================================= */
+
+/* Lớp đen phủ mờ màn hình */
+.prize-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.85); /* Tối 85% */
+    z-index: 9999; /* Luôn nổi lên trên cùng mọi thứ */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Đổi icon chuột để báo hiệu có thể click tắt */
+    
+    /* Animation hiện ra mượt mà */
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Bức ảnh được zoom to */
+.prize-modal-img {
+    height: 100vh; /* Kích thước H bằng đúng 100% màn hình thiết bị */
+    width: auto;   /* Chiều ngang tự co dãn để không bị méo */
+    max-width: 100vw;
+    object-fit: contain; /* Đảm bảo thấy trọn vẹn bức ảnh */
+    cursor: default; /* Rê chuột vào ảnh không bị icon bàn tay nữa */
+    border-radius: 8px; /* Tùy chọn bo góc nhẹ cho ảnh to */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .cs-prize-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .cs-prize-container {
+        height: auto;
+        padding-bottom: 80px;
+    }
+}

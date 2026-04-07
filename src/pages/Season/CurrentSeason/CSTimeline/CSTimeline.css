@@ -1,0 +1,244 @@
+/* --- LỚP BỌC TỔNG THỂ --- */
+.cs-timeline-container {
+    width: 100%;
+    height: 1130px; 
+    
+    /* Background như yêu cầu: Gradient từ #11192A đến #11192A (Màu xanh đen đặc) */
+    background: linear-gradient(to bottom, #11192A 0%, #0243E7 100%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    box-sizing: border-box;
+    overflow: hidden; /* Tránh thanh cuộn ngang khi slider chạy */
+}
+
+/* --- TITLE TỔNG CỦA COMPONENT --- */
+.cs-timeline-main-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0 0 60px 0;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #45BFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+/* =========================================
+   2. KHU VỰC NAVIGATOR (TRỤC THỜI GIAN)
+========================================= */
+.timeline-navigator {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Khoảng cách giữa các hàng timeline */
+    margin-bottom: 80px; /* Cách khu vực content bên dưới */
+}
+
+.timeline-row {
+    display: flex;
+    align-items: center;
+}
+
+/* CỘT TRÁI (Khu vực Ngày) */
+.timeline-date-col {
+    width: 450px; /* Đảm bảo đủ rộng để đẩy sát vào line */
+    display: flex;
+    justify-content: flex-end; /* Căn lề phải để sát vào trục giữa */
+    padding-right: 30px;
+}
+
+/* Tấm thẻ Glass Ngày tháng */
+.timeline-date-glass {
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    
+    /* Animation khi hover y như các logo Partner */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.timeline-date-glass:hover {
+    transform: translateY(-5px); /* Nhún lên một chút */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* CỘT GIỮA (Trục thẳng & Chấm tròn) */
+.timeline-center-col {
+    width: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Dấu chấm */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #B0C4DE; /* Màu xám nhạt mặc định */
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Dấu chấm khi được kích hoạt sẽ to ra và sáng xanh */
+.timeline-dot.active {
+    transform: scale(1.6);
+    background-color: #45BFFF;
+    box-shadow: 0 0 15px rgba(69, 191, 255, 0.6);
+}
+
+/* Đường thẳng nối */
+.timeline-line {
+    width: 2px;
+    height: 90px; /* Tùy chỉnh độ dài đường kẻ */
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 14px;
+    z-index: 1;
+}
+
+/* CỘT PHẢI (Khu vực Tên Vòng thi) */
+.timeline-name-col {
+    width: 480px; 
+    padding-left: 30px;
+}
+
+.timeline-name-text {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-name-text h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    line-height: 1;
+}
+
+.timeline-name-text p {
+    font-size: 18px;
+    margin: 0;
+    color: #A0B0C0;
+    transition: color 0.3s ease;
+}
+
+/* Hiệu ứng Hover và Active cho chữ */
+.timeline-name-text:hover h4, .timeline-name-text.active h4 {
+    color: #45BFFF;
+    text-decoration: underline; /* Gạch chân khi hover/active */
+    text-underline-offset: 6px;
+}
+
+.timeline-name-text:hover p, .timeline-name-text.active p {
+    color: white;
+}
+
+/* =========================================
+   3. KHU VỰC NỘI DUNG CHI TIẾT BÊN DƯỚI
+========================================= */
+.timeline-details-section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Tiêu đề riêng của từng Round */
+.details-main-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #45BFFF; /* Chữ xanh đồng bộ */
+    margin: 0 0 30px 0;
+}
+
+/* Khung kính chứa chữ */
+.details-glass-box {
+    width: 100%;
+    max-width: 1352px;
+    height: auto; /* Chiều cao tự động ôm theo text */
+    padding: 40px 50px;
+    box-sizing: border-box;
+    
+    background: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    
+    /* Animation hover cho Glass box */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-glass-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Tiêu đề nhỏ bên trong (FORMAT, REQUIREMENTS) có hiệu ứng Gradient */
+.inner-gradient-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 25px 0 10px 0;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #45BFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.inner-gradient-title:first-child {
+    margin-top: 0;
+}
+
+/* Định dạng text bên trong */
+.details-glass-box p {
+    margin: 0 0 15px 0;
+}
+
+.details-glass-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.details-glass-box li {
+    margin-bottom: 10px;
+}
+
+/* Định dạng thẻ <strong> (In đậm) */
+.details-glass-box strong {
+    font-weight: 700;
+    color: white; /* Đảm bảo chữ in đậm luôn trắng sáng */
+}

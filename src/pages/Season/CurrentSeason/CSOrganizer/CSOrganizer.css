@@ -1,0 +1,83 @@
+/* --- LỚP BỌC TỔNG THỂ --- */
+.cs-organizer-container {
+    width: 100%;
+    height: 379px; /* Chiều cao cố định chuẩn theo layout Figma của bạn */
+    
+    /* Màu nền tối (Tôi lấy mẫu màu tối từ ảnh của bạn, bạn có thể thay đổi nếu cần) */
+    background-color: #0A1325; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Tự động căn giữa chữ và logo theo chiều dọc */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --- TITLE GRADIENT --- */
+.cs-organizer-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0 0 35px 0; /* Khoảng cách đẩy khu vực logo xuống dưới */
+    
+    /* Tái sử dụng màu Gradient của các Title khác cho đồng bộ */
+    background: linear-gradient(to bottom, #FFFFFF 0%, #45BFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+/* --- KHU VỰC LƯỚI CHỨA LOGO --- */
+.cs-organizer-grid {
+    width: 100%;
+    max-width: 1288px; /* Chiều rộng khung ảnh bạn cung cấp */
+    height: 199px; /* Chiều cao khung ảnh bạn cung cấp */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Tách 2 logo ra xa nhau một chút */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- TỪNG KHUNG CHỨA LOGO --- */
+.organizer-logo-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.organizer-logo-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    
+    /* CỰC KỲ QUAN TRỌNG: Giúp logo không bao giờ bị méo hay bị cắt xén */
+    object-fit: contain; 
+}
+
+.organizer-logo:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI / TABLET --- */
+@media (max-width: 900px) {
+    .cs-organizer-container {
+        height: auto; /* Thả tự do chiều cao trên màn hình nhỏ */
+        padding: 60px 0;
+    }
+    .cs-organizer-grid {
+        flex-direction: column; /* Xếp dọc 2 logo */
+        height: auto;
+        gap: 40px;
+    }
+    .cs-organizer-title {
+        font-size: 40px;
+    }
+    .organizer-logo-wrapper img {
+        max-height: 120px; /* Thu nhỏ logo lại cho vừa màn hình đt */
+    }
+}

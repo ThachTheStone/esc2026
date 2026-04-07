@@ -23,9 +23,6 @@ const Navbar = () => {
                         <Link to="/season">Season</Link>
                     </li>
                     <li>
-                        <Link to="/partner">Partner</Link>
-                    </li>
-                    <li>
                         <Link to="/contact">Contact</Link>
                     </li>
                 </ul>

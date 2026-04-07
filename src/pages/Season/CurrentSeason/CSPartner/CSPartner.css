@@ -1,0 +1,98 @@
+/* --- LỚP BỌC TỔNG THỂ --- */
+.cs-partner-container {
+    width: 100%;
+    height: 800px; /* Chiều cao tổng theo thiết kế */
+    background: linear-gradient(to top, #0243E8 0%, #0A1325 100%); /* Nền xanh đen tối đồng bộ với Organizer */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    /* box-sizing: border-box; */
+}
+
+/* --- TITLE GRADIENT --- */
+.cs-partner-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0 0 60px 0; /* Khoảng cách từ Title xuống Hàng 1 */
+    
+    background: linear-gradient(to bottom, #FFFFFF 0%, #45BFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+/* --- KHU VỰC CHỨA 3 HÀNG LOGO --- */
+.cs-partner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Khoảng cách giữa các hàng (từ hàng 1 xuống hàng 2...) */
+    width: 100%;
+    padding: 0 20px;
+    margin-top: -10px;
+    box-sizing: border-box;
+}
+
+/* --- ĐỊNH DẠNG CHUNG CHO MỘT HÀNG --- */
+.partner-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các logo TRONG CÙNG 1 HÀNG */
+    width: 100%;
+}
+
+/* KÍCH THƯỚC CHUẨN XÁC TỪ FIGMA */
+.row-1 { max-width: 914px; height: 141px; }
+.row-2 { max-width: 1288px; height: 198px; }
+.row-3 { max-width: 1288px; height: 199px; }
+
+/* --- KHUNG CHỨA TỪNG LOGO --- */
+.partner-logo {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    
+    /* Animation nảy lên khi hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-eduwing img{
+    width: 100%; 
+    transform: translate(100px, 10px);
+}
+
+.partner-logo:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Đảm bảo ảnh lấp đầy khối mà không bị méo tỉ lệ */
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI / TABLET --- */
+@media (max-width: 1024px) {
+    .cs-partner-container {
+        height: auto;
+        padding-bottom: 60px;
+    }
+    .partner-row {
+        height: auto; /* Thả tự do chiều cao */
+        flex-wrap: wrap; /* Cho phép rớt dòng nếu thiếu chỗ */
+    }
+    .partner-logo {
+        /* Trên đt/tablet, quy định chiều cao cố định để không bị bóp méo */
+        height: 120px; 
+        min-width: 250px; 
+    }
+}

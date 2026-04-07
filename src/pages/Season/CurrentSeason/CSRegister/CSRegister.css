@@ -1,0 +1,61 @@
+.registerSection {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(3, 16, 39); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0; 
+}
+
+.registerImagePlaceholder {
+    width: 100%;
+    max-width: 1700px;
+    height: 600px; 
+    border-radius: 0px;
+    background-image: url('../../../../assets/picture/Banner.png');
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+}
+
+.register-btn-banner {
+    position: absolute;
+    top: 78%;
+    left: 22%;
+    transform: translate(-50%, -50%); 
+    
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(15, 23, 42, 0.4); 
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 50px; 
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.register-btn-banner:hover {
+    background-color: #ffffff;
+    color: #0f172a; 
+    border-color: #ffffff;
+    transform: translate(-50%, calc(-50% - 4px)); /* Nảy nhẹ lên */
+}
+
+/* RESPONSIVE: Khi xem trên điện thoại, ảnh bị co lại nên nút cũng cần chỉnh lại vị trí */
+@media (max-width: 768px) {
+    .register-btn-banner {
+        top: 85%; /* Thường trên điện thoại sẽ cần đẩy xuống sâu hơn */
+        left: 50%; /* Có thể cho ra chính giữa */
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}

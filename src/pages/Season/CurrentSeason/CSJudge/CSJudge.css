@@ -1,0 +1,102 @@
+/* --- LỚP BỌC TỔNG THỂ --- */
+.cs-judge-container {
+    width: 100%;
+    height: 610px; 
+    
+  
+    background: linear-gradient(to bottom, #0243E8 0%, #092F90 100%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px; 
+    box-sizing: border-box;
+    
+}
+
+/* --- KHU VỰC TITLE VỚI CHỮ GRADIENT --- */
+.cs-judge-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 52px;
+    font-weight: 800; 
+    margin: 0 0 45px 0; 
+    text-align: center;
+    
+    /* TUYỆT CHIÊU LÀM MÀU CHỮ GRADIENT */
+    background: linear-gradient(to bottom, #FFFFFF 0%, #45BFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+
+    line-height: 1.2; 
+    padding-bottom: 5px;
+}
+
+/* --- KHU VỰC LƯỚI CHỨA 3 ẢNH --- */
+.cs-judge-grid {
+    width: 100%;
+    max-width: 1294px; /* Giới hạn độ rộng tối đa của khu vực ảnh */
+    
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* Khoảng cách chia đều giữa các bức ảnh */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* --- TỪNG KHUNG ẢNH (CARD) --- */
+.judge-card {
+    width: 391px;
+    height: 391px;
+    border-radius: 36px;
+    overflow: hidden; 
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    
+ 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.judge-card:hover {
+    transform: scale(1,5); /* Phóng to 5% */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); /* Bóng đậm hơn khi nhô lên */
+}
+
+.judge-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy khung 391x391 không bị méo */
+    display: block;
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI / TABLET --- */
+@media (max-width: 1200px) {
+    .cs-judge-grid {
+        gap: 30px; /* Thu hẹp khoảng cách trên màn nhỏ */
+    }
+    .judge-card {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cs-judge-container {
+        height: auto;
+        padding-bottom: 60px;
+    }
+    .cs-judge-title {
+        font-size: 40px;
+        padding: 0 20px;
+    }
+    .cs-judge-grid {
+        flex-direction: column; /* Xếp dọc ảnh trên điện thoại */
+        align-items: center;
+    }
+    .judge-card {
+        width: 100%;
+        max-width: 391px;
+    }
+}
