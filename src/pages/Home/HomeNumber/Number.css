@@ -76,16 +76,10 @@
 
 /* --- HIỆU ỨNG HOVER CHO KHỐI KÍNH --- */
 .numberRight.glass-panel:hover {
-    transform: translateY(-10px); /* Nảy khối kính lên trên 10px */
-    
-    /* Tăng độ sáng của lớp kính lên một chút (từ 0.05 lên 0.08) */
+    /*transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.08); 
-    
-    /* Làm viền kính rõ nét hơn */
     border: 1px solid rgba(255, 255, 255, 0.25); 
-    
-    /* Bóng đổ đậm hơn phía dưới, kèm theo một quầng sáng màu xanh nhạt tỏa ra xung quanh */
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.15); 
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.15); */
 }
 
 /* Đổi màu chữ sang trắng/xám vì nền giờ đã tối */

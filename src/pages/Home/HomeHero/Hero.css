@@ -66,6 +66,11 @@
     
     }
 
+.heroContainer-buttons a{
+    font-family: 'jost', sans-serif;
+    font-weigt: 700;
+}
+
 .register-btn {
     display: inline-flex;
     align-items: center;

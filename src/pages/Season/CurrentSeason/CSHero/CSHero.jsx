@@ -30,9 +30,7 @@ const CSHero = () => {
 
                 {/* 3. KHU VỰC BUTTONS (GLASSMORPHISM) */}
                 <div className="cs-hero-buttons">
-                    <div className="cs-glass-btn action-btn">
-                        In progress
-                    </div>
+                    
                     <a 
                         href="https://forms.gle/29UFPSqUqQGGKg7Q8" 
                         target="_blank" 

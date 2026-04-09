@@ -31,7 +31,7 @@ const timelineData = [
         id: 1,
         date: "March 25, 2026 - April 25, 2026",
         dateWidth: "418px",
-        roundName: "Semi- Final Round",
+        roundName: "Semi - Final Round",
         roundTheme: "ALIGN",
         title: "Semi-Final Round: ALIGN",
         content: (

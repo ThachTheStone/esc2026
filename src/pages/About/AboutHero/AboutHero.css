@@ -98,19 +98,10 @@
     border-radius: 24px;
 
     transition: all 0.3s ease; 
-    cursor: pointer;
+    
 }
 
-.aboutCard:hover {
-    transform: translateY(-10px); /* Nảy thẻ lên trên 10px */
-    
-    /* Kính sáng hơn một chút khi được hover */
-    background: rgba(255, 255, 255, 0.08); 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    
-    /* Thêm ánh sáng tỏa ra xung quanh (màu xanh dương nhạt) */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(75, 213, 255, 0.15); 
-}
+
 
 .aboutCardIcon {
     width: 50px;

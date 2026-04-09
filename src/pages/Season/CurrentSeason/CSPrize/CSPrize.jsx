@@ -67,10 +67,10 @@ const CSPrize = () => {
                     whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                     <div className="prize-img-wrapper">
-                        <img src={Prize2nd} alt="First Award" />
+                        <img src={Prize1st} alt="First Award" />
                     </div>
                     <div className="prize-action-bar">
-                        <button className="prize-view-btn" onClick={() => openModal(Prize2nd)}>
+                        <button className="prize-view-btn" onClick={() => openModal(Prize1st)}>
                             View &rarr;
                         </button>
                     </div>
@@ -86,10 +86,10 @@ const CSPrize = () => {
                     whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
                 >
                     <div className="prize-img-wrapper">
-                        <img src={Prize2nd} alt="Third Award" />
+                        <img src={Prize3rd} alt="Third Award" />
                     </div>
                     <div className="prize-action-bar">
-                        <button className="prize-view-btn" onClick={() => openModal(Prize2nd)}>
+                        <button className="prize-view-btn" onClick={() => openModal(Prize3rd)}>
                             View &rarr;
                         </button>
                     </div>

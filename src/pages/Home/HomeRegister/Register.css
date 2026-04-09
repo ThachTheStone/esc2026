@@ -19,6 +19,11 @@
     position: relative; 
 }
 
+.registerImagePlaceholder a {
+    font-family: 'jost', sans-serif;
+    font-weight: 700;
+}
+
 .register-btn-banner {
     position: absolute;
     top: 78%;

@@ -65,7 +65,7 @@
     /* Bắt buộc phải có lệnh này để ảnh không bị lòi ra ngoài phần bo góc */
     overflow: hidden; 
     
-    cursor: pointer;
+    /* cursor: pointer; */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Bóng đổ tạo chiều sâu ban đầu */
     
     /* Chuyển động mượt mà cho hiệu ứng hover bóng đổ */
