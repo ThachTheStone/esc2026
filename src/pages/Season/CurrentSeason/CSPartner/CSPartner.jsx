@@ -59,8 +59,8 @@ const CSPartner = () => {
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.7, delay: 0.4 }}
                 >
-                    <div className="partner-logo">
-                        <div classname ="partner-logo logo-eduwing">
+                    <div className="partner-logo-edu">
+                        <div classname ="partner-logo-edu eduwing">
                             <img src={Partner3} alt="Partner" />
                         </div>
                     </div>
@@ -82,7 +82,7 @@ const CSPartner = () => {
                     transition={{ duration: 0.7, delay: 0.6 }}
                 >
                     <div className="partner-logo"><img src={Partner7} alt="Partner" /></div>
-                    <div className="partner-logo"><img src={Partner8} alt="Partner" /></div>
+                    <div className="partner-logo xuan-le"><img src={Partner8} alt="Partner" /></div>
                     <div className="partner-logo"><img src={Partner9} alt="Partner" /></div>
                 </motion.div>
 

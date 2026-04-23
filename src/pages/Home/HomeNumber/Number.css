@@ -76,10 +76,10 @@
 
 /* --- HIỆU ỨNG HOVER CHO KHỐI KÍNH --- */
 .numberRight.glass-panel:hover {
-    /*transform: translateY(-10px);
+    /* transform: translateY(-10px); */
     background: rgba(255, 255, 255, 0.08); 
-    border: 1px solid rgba(255, 255, 255, 0.25); 
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.15); */
+    border: 1px solid rgb(255, 255, 255); 
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.15);
 }
 
 /* Đổi màu chữ sang trắng/xám vì nền giờ đã tối */

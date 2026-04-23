@@ -20,8 +20,8 @@
 }
 
 .reasonCard:hover {
-    /*transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.1);*/ /* Sáng lên một chút khi hover */
+    /* transform: translateY(-8px); */
+    background: rgba(255, 255, 255, 0.174); /* Sáng lên một chút khi hover */
 }
 
 .reasonCard h3 {

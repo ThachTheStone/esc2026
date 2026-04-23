@@ -98,9 +98,14 @@
     border-radius: 24px;
 
     transition: all 0.3s ease; 
-    
 }
 
+.aboutCard:hover {
+    /* transform: translateY(-10px); */
+    background: rgba(255, 255, 255, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.135); 
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(59, 130, 246, 0.15);
+}
 
 
 .aboutCardIcon {
