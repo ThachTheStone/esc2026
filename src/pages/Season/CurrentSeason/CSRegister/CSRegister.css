@@ -10,11 +10,11 @@
 
 .registerImagePlaceholder {
     width: 100%;
-    max-width: 1700px;
-    height: 600px; 
+    /* max-width: 1700px; */
+    min-height: 64vh; 
     border-radius: 0px;
-    background-image: url('../../../../assets/picture/Banner.png');
-    background-size: cover;
+    background-image: url('../../../assets/picture/Banner.png');
+    background-size: contain;
     background-position: center;
     position: relative; 
 }
